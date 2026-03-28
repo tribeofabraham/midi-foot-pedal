@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//c/Users/mark/.platformio/packages/framework-arduinoespressif32/cores/esp32/**)",
+      "Bash(~/.platformio/penv/Scripts/pio.exe run:*)",
+      "Read(//c/Users/mark/.platformio/platforms/espressif32/**)"
+    ]
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//c/Users/mark/.platformio/packages/framework-arduinoespressif32/tools/sdk/**)",
+      "Bash(grep -r CONFIG_TINYUSB_ENABLED ~/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32s3/sdkconfig*)",
+      "Bash(find ~/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32s3/ -name sdkconfig*)",
+      "Read(//c/Users/mark/.platformio/packages/framework-arduinoespressif32/**)",
+      "Read(//c/Users/mark/.platformio/packages/framework-arduinoespressif32-libs/esp32s3/include/esp_driver_usb_serial_jtag/include/driver/**)",
+      "Read(//d/TribeOfAbrahamGit/toa-site//**)",
+      "Read(//d/TribeOfAbrahamGit/midi-foot-pedal-flasher/**)",
+      "Bash(find C:/Users/mark/.platformio/packages/framework-arduinoespressif32/libraries/USB/examples/ -type f -name *.ino)",
+      "Bash(mkdir -p \"d:/TribeOfAbrahamGit/midi-foot-pedal-flasher/firmware\")",
+      "Bash(cp \"d:/TribeOfAbrahamGit/midi-foot-pedal/.pio/build/esp32s3_super_mini/bootloader.bin\" \"d:/TribeOfAbrahamGit/midi-foot-pedal-flasher/firmware/bootloader.bin\")",
+      "Bash(cp \"d:/TribeOfAbrahamGit/midi-foot-pedal/.pio/build/esp32s3_super_mini/partitions.bin\" \"d:/TribeOfAbrahamGit/midi-foot-pedal-flasher/firmware/partition-table.bin\")",
+      "Bash(cp \"d:/TribeOfAbrahamGit/midi-foot-pedal/.pio/build/esp32s3_super_mini/firmware.bin\" \"d:/TribeOfAbrahamGit/midi-foot-pedal-flasher/firmware/firmware.bin\")",
+      "Read(//d/TribeOfAbrahamGit/toa-site/**)",
+      "Bash(cp \"d:/TribeOfAbrahamGit/midi-foot-pedal/.pio/build/esp32s3_super_mini/bootloader.bin\" \"d:/TribeOfAbrahamGit/toa-site/midi-foot-pedal-flasher/firmware/bootloader.bin\")",
+      "Bash(cp \"d:/TribeOfAbrahamGit/midi-foot-pedal/.pio/build/esp32s3_super_mini/partitions.bin\" \"d:/TribeOfAbrahamGit/toa-site/midi-foot-pedal-flasher/firmware/partition-table.bin\")",
+      "Bash(cp \"d:/TribeOfAbrahamGit/midi-foot-pedal/.pio/build/esp32s3_super_mini/firmware.bin\" \"d:/TribeOfAbrahamGit/toa-site/midi-foot-pedal-flasher/firmware/firmware.bin\")",
+      "Bash(ls \"d:/TribeOfAbrahamGit/midi-foot-pedal/.pio/build/esp32s3_super_mini/\"*.bin)",
+      "Bash(ls -la \"d:/TribeOfAbrahamGit/midi-foot-pedal-flasher/firmware/\"*.bin)",
+      "Bash(ls -la \"d:/TribeOfAbrahamGit/toa-site/midi-foot-pedal-flasher/firmware/\"*.bin)"
+    ],
+    "additionalDirectories": [
+      "d:\\TribeOfAbrahamGit\\midi-foot-pedal-flasher"
+    ]
+  }
+}
