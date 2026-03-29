@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Ragamuffin Hall Nashville Notation Wheel</title>
+    <!--<link rel="icon" href="favicon.ico" type="image/x-icon">-->
+    <!-- Or for a PNG: -->
+    <link rel="icon" href="img/icon.png" type="image/png">
+    <!--<meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+    <!-- Allow web app to be run in full-screen mode. -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+
+    <!-- Make the app title different than the page title. -->
+    <meta name="apple-mobile-web-app-title" content="Ragamuffin Hall Nashville Notation">
+
+    <!-- Configure the status bar. -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="theme-color" content="#000000">
+
+    <!-- Set the viewport. -->
+    <!--<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">-->
+    <!-- Set OGP stuff -->
+    <!-- Open Graph Protocol (OGP) Meta Tags for Link Previews -->
+    <meta property="og:title" content="Ragamuffin Nashville Notation Tool">
+    <meta property="og:description" content="Nashville Notation Visualizer.">
+    <meta property="og:image" content="https://www.tribeofabraham.com/launch.png">
+    <meta property="og:url" content="https://www.tribeofabraham.com">
+    <meta property="og:type" content="website"> <!-- Or "article", "blog", etc. -->
+
+    <!-- Set iOS stuff -->
+    <link rel="apple-touch-icon" href="img/icon.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="img/icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="img/icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="img/icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="img/icon-180x180.png">
+    <link rel="apple-touch-startup-image" href="img/launch_portrait.png"
+        media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
+    <link rel="apple-touch-startup-image" href="img/launch.png"
+        media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)">
+    <!-- Add more sizes and media queries for other devices and orientations -->
+
+    <script src="js/jquery-3.6.1.min.js"></script>
+    <script src="js/nn.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/nn.css">
+    <link rel="stylesheet" type="text/css" href="css/fonts.css">
+    <link rel="stylesheet" type="text/css" href="css/colors.css">
+</head>
+
+<body>
+    <div id="wrapper" role="main">
+
+        <div class="circle">
+            <div class="wheelBack"></div>
+            <img id="numbers" class="ring" src="img/nnInner.svg" alt="Nashville notation numbers wheel" />
+            <img id="keys" class="ring" src="img/nnOuter.svg" alt="Musical keys wheel" />
+
+        </div>
+        <div id="selectKey" class="">
+            <h1 class="keyTxt" id="keyLabel">KEY</h1>
+            <select tabindex="0" aria-labelledby="keyLabel">
+                <option>C</option>
+                <option>C#/Db</option>
+                <option>D</option>
+                <option>D#/Eb</option>
+                <option>E</option>
+                <option>F</option>
+                <option>F#/Gb</option>
+                <option>G</option>
+                <option>G#/Ab</option>
+                <option>A</option>
+                <option>A#/Bb</option>
+                <option>B</option>
+            </select>
+            <h1 class="transposeTxt">TRANSPOSE</h1>
+            <div id="trans">0</div>
+            <div id="tranUp" class="tranBtn down" tabindex="0"></div>
+            <div id="tranDown" class="tranBtn up" tabindex="0"></div>
+        </div>
+
+        <div class="chords">
+
+            <div id="progression">
+                <!--<div class="keyColor">
+               <h2>by chord</h2><input type="range" min="0" max="1" value="0" /><h2>by key</h2>
+            </div>-->
+
+                <div id="selectProg1" class="dialog bottom">
+                    <select class="chordSelect" aria-label="Chord 1 number">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                        <option>6</option>
+                        <option>7</option>
+                    </select>
+                    <select class="modSelect" aria-label="Chord 1 modifier">
+                        <option value="0"></option>
+                        <option value="1">m</option>
+                        <option value="2">7</option>
+                        <option value="3">b</option>
+                        <option value="4">bm</option>
+                        <option value="5">b7</option>
+
+                    </select>
+                    <div class="chordChart">
+                    </div>
+                    <div class="scales">
+                        <div class="note"></div>
+                    </div>
+                    <div class="pianoChartBack"></div>
+                    <div class="pianoChart">
+
+                    </div>
+                </div>
+                <div id="selectProg2" class="dialog bottom">
+                    <select class="chordSelect" aria-label="Chord 2 number">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                        <option>6</option>
+                        <option>7</option>
+                    </select>
+                    <select class="modSelect" aria-label="Chord 2 modifier">
+                        <option value="0"></option>
+                        <option value="1">m</option>
+                        <option value="2">7</option>
+                        <option value="3">b</option>
+                        <option value="4">bm</option>
+                        <option value="5">b7</option>
+
+                    </select>
+                    <div class="chordChart">
+                    </div>
+                    <div class="scales">
+                    </div>
+                    <div class="pianoChartBack"></div>
+                    <div class="pianoChart">
+
+                    </div>
+                </div>
+                <div id="selectProg3" class="dialog bottom">
+                    <select class="chordSelect" aria-label="Chord 3 number">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                        <option>6</option>
+                        <option>7</option>
+                    </select>
+                    <select class="modSelect" aria-label="Chord 3 modifier">
+                        <option value="0"></option>
+                        <option value="1">m</option>
+                        <option value="2">7</option>
+                        <option value="3">b</option>
+                        <option value="4">bm</option>
+                        <option value="5">b7</option>
+
+                    </select>
+                    <div class="chordChart">
+                    </div>
+                    <div class="scales">
+                    </div>
+                    <div class="pianoChartBack"></div>
+                    <div class="pianoChart">
+
+                    </div>
+                </div>
+                <div id="selectProg4" class="dialog bottom">
+                    <select class="chordSelect" aria-label="Chord 4 number">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                        <option>6</option>
+                        <option>7</option>
+                    </select>
+                    <select class="modSelect" aria-label="Chord 4 modifier">
+                        <option value="0"></option>
+                        <option value="1">m</option>
+                        <option value="2">7</option>
+                        <option value="3">b</option>
+                        <option value="4">bm</option>
+                        <option value="5">b7</option>
+
+                    </select>
+                    <div class="chordChart">
+                    </div>
+                    <div class="scales">
+                    </div>
+                    <div class="pianoChartBack"></div>
+                    <div class="pianoChart">
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,1331 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 161.9 236.19">
+  <!-- Generator: Adobe Illustrator 29.8.1, SVG Export Plug-In . SVG Version: 2.1.1 Build 2)  -->
+  <defs>
+    <style>
+      .st0 {
+        fill: #e6e6e5;
+      }
+
+      .st1 {
+        fill: url(#linear-gradient2);
+      }
+
+      .st2 {
+        fill: url(#linear-gradient10);
+      }
+
+      .st3 {
+        fill: #7ea740;
+      }
+
+      .st3, .st4, .st5, .st6, .st7 {
+        stroke: #fff;
+        stroke-miterlimit: 10;
+      }
+
+      .st8, .st9, .st10 {
+        fill: #fff;
+      }
+
+      .st11 {
+        fill: url(#linear-gradient1);
+      }
+
+      .st12 {
+        fill: url(#linear-gradient9);
+      }
+
+      .st13 {
+        fill: url(#linear-gradient8);
+      }
+
+      .st14 {
+        fill: url(#linear-gradient11);
+      }
+
+      .st4 {
+        fill: #235daa;
+      }
+
+      .st15, .st9, .st10 {
+        isolation: isolate;
+      }
+
+      .st9 {
+        font-size: 48px;
+      }
+
+      .st9, .st10 {
+        font-family: Impact, Impact;
+      }
+
+      .st5 {
+        fill: #c02727;
+      }
+
+      .st10 {
+        font-size: 18px;
+      }
+
+      .st16 {
+        fill: url(#linear-gradient7);
+      }
+
+      .st17 {
+        fill: url(#linear-gradient4);
+      }
+
+      .st18 {
+        fill: url(#linear-gradient5);
+      }
+
+      .st19 {
+        fill: url(#linear-gradient3);
+      }
+
+      .st20 {
+        display: none;
+      }
+
+      .st6 {
+        fill: #ff7415;
+      }
+
+      .st21 {
+        fill: url(#linear-gradient6);
+      }
+
+      .st22 {
+        fill: #321c0f;
+      }
+
+      .st23 {
+        fill: url(#linear-gradient);
+      }
+    </style>
+    <linearGradient id="linear-gradient" x1="-3196.27" y1="-2804.49" x2="-3192.27" y2="-2804.49" gradientTransform="translate(-2717.46 -3097.68) rotate(-90) scale(1 -1)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#676767"/>
+      <stop offset=".5" stop-color="#e6e6e5"/>
+      <stop offset="1" stop-color="#676767"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient1" x1="-3149.07" y1="-2804.54" x2="-3144.97" y2="-2804.54" gradientTransform="translate(-2717.46 -3097.58) rotate(-90) scale(1 -1)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#676767"/>
+      <stop offset=".5" stop-color="#e6e6e5"/>
+      <stop offset="1" stop-color="#676767"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient2" x1="-3156.47" y1="-2804.49" x2="-3144.87" y2="-2804.49" gradientTransform="translate(-2717.46 -3097.68) rotate(-90) scale(1 -1)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ffdbb1"/>
+      <stop offset=".3" stop-color="#fcd8af"/>
+      <stop offset=".5" stop-color="#f4d1a9"/>
+      <stop offset=".6" stop-color="#e6c59f"/>
+      <stop offset=".8" stop-color="#d2b491"/>
+      <stop offset=".9" stop-color="#b99e7f"/>
+      <stop offset="1" stop-color="#9a846a"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient3" x1="-3234.97" y1="-2804.54" x2="-3230.87" y2="-2804.54" gradientTransform="translate(-2717.56 -3097.68) rotate(-90) scale(1 -1)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#676767"/>
+      <stop offset=".5" stop-color="#e6e6e5"/>
+      <stop offset="1" stop-color="#676767"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient4" x1="-3272.77" y1="-2804.49" x2="-3268.67" y2="-2804.49" gradientTransform="translate(-2717.46 -3097.68) rotate(-90) scale(1 -1)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#676767"/>
+      <stop offset=".5" stop-color="#e6e6e5"/>
+      <stop offset="1" stop-color="#676767"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient5" x1="-3310.27" y1="-2804.54" x2="-3306.27" y2="-2804.54" gradientTransform="translate(-2717.56 -3097.68) rotate(-90) scale(1 -1)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#676767"/>
+      <stop offset=".5" stop-color="#e6e6e5"/>
+      <stop offset="1" stop-color="#676767"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient6" x1="-3230.77" y1="-2771.79" x2="-3230.77" y2="-2774.99" gradientTransform="translate(-2717.46 -3097.58) rotate(-90) scale(1 -1)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#adadad"/>
+      <stop offset=".5" stop-color="#fafbfc"/>
+      <stop offset="1" stop-color="#adadad"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient7" x1="-3230.87" y1="-2835.69" x2="-3230.87" y2="-2836.69" gradientTransform="translate(-2717.56 -3097.68) rotate(-90) scale(1 -1)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#adadad"/>
+      <stop offset=".5" stop-color="#fafbfc"/>
+      <stop offset="1" stop-color="#adadad"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient8" x1="-3230.77" y1="-2822.89" x2="-3230.77" y2="-2824.39" gradientTransform="translate(-2717.56 -3097.68) rotate(-90) scale(1 -1)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#adadad"/>
+      <stop offset=".5" stop-color="#fafbfc"/>
+      <stop offset="1" stop-color="#adadad"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient9" x1="-3230.77" y1="-2810.09" x2="-3230.77" y2="-2812.09" gradientTransform="translate(-2717.46 -3097.58) rotate(-90) scale(1 -1)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#adadad"/>
+      <stop offset=".5" stop-color="#fafbfc"/>
+      <stop offset="1" stop-color="#adadad"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient10" x1="-3230.87" y1="-2797.39" x2="-3230.87" y2="-2799.69" gradientTransform="translate(-2717.56 -3097.68) rotate(-90) scale(1 -1)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#adadad"/>
+      <stop offset=".5" stop-color="#fafbfc"/>
+      <stop offset="1" stop-color="#adadad"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient11" x1="-3230.77" y1="-2784.59" x2="-3230.77" y2="-2787.39" gradientTransform="translate(-2717.56 -3097.68) rotate(-90) scale(1 -1)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#adadad"/>
+      <stop offset=".5" stop-color="#fafbfc"/>
+      <stop offset="1" stop-color="#adadad"/>
+    </linearGradient>
+  </defs>
+  <g id="Db7" class="st20">
+    <g id="pattern">
+      <path class="st7" d="M21.25,225.77V96.79h118.77v128.98H21.25ZM22.53,98.07v126.43h116.21v-126.43H22.53Z"/>
+      <rect class="st7" x="44.75" y="97.3" width="1.28" height="127.7"/>
+      <rect class="st7" x="68.5" y="97.3" width="1.28" height="127.7"/>
+      <rect class="st7" x="92" y="97.3" width="1.28" height="127.7"/>
+      <rect class="st7" x="115.24" y="97.3" width="1.28" height="127.7"/>
+      <rect class="st7" x="22.02" y="128.71" width="117.49" height="1.28"/>
+      <rect class="st7" x="22.02" y="96.79" width="117.49" height="1.28"/>
+      <rect class="st7" x="22.02" y="160.64" width="117.49" height="1.28"/>
+      <rect class="st7" x="22.02" y="192.57" width="117.49" height="1.28"/>
+      <rect class="st7" x="22.02" y="224.49" width="117.49" height="1.28"/>
+      <g class="st15">
+        <g class="st15">
+          <text class="st9" transform="translate(45.65 58.08)"><tspan x="0" y="0">Db7</tspan></text>
+        </g>
+      </g>
+      <circle class="st3" cx="68.78" cy="177.68" r="9.55"/>
+      <circle class="st4" cx="116.24" cy="177.32" r="9.55"/>
+      <circle class="st6" cx="92.28" cy="113.68" r="9.55"/>
+      <circle class="st5" cx="44.75" cy="113.82" r="9.55"/>
+      <g class="st15">
+        <g class="st15">
+          <text class="st10" transform="translate(2 105.12)"><tspan x="0" y="0">4</tspan></text>
+        </g>
+      </g>
+      <circle class="st3" cx="139.51" cy="113.82" r="9.55"/>
+      <g>
+        <rect class="st8" x="19.29" y="72.62" width="4.35" height="20.14" transform="translate(-52.18 39.4) rotate(-45)"/>
+        <rect class="st8" x="11.39" y="80.51" width="20.14" height="4.35" transform="translate(-52.18 39.39) rotate(-45)"/>
+      </g>
+    </g>
+  </g>
+  <g id="Dbm" class="st20">
+    <g id="pattern1" data-name="pattern">
+      <path class="st7" d="M21.25,225.77V96.79h118.77v128.98H21.25ZM22.53,98.07v126.43h116.21v-126.43H22.53Z"/>
+      <rect class="st7" x="44.75" y="97.3" width="1.28" height="127.7"/>
+      <rect class="st7" x="68.5" y="97.3" width="1.28" height="127.7"/>
+      <rect class="st7" x="92" y="97.3" width="1.28" height="127.7"/>
+      <rect class="st7" x="115.24" y="97.3" width="1.28" height="127.7"/>
+      <rect class="st7" x="22.02" y="128.71" width="117.49" height="1.28"/>
+      <rect class="st7" x="22.02" y="96.79" width="117.49" height="1.28"/>
+      <rect class="st7" x="22.02" y="160.64" width="117.49" height="1.28"/>
+      <rect class="st7" x="22.02" y="192.57" width="117.49" height="1.28"/>
+      <rect class="st7" x="22.02" y="224.49" width="117.49" height="1.28"/>
+      <g class="st15">
+        <g class="st15">
+          <text class="st9" transform="translate(36.65 58.08)"><tspan x="0" y="0">Dbm</tspan></text>
+        </g>
+      </g>
+      <circle class="st3" cx="68.78" cy="177.68" r="9.55"/>
+      <circle class="st4" cx="116.24" cy="145.32" r="9.55"/>
+      <circle class="st5" cx="92.28" cy="177.68" r="9.55"/>
+      <circle class="st5" cx="44.75" cy="113.82" r="9.55"/>
+      <g class="st15">
+        <g class="st15">
+          <text class="st10" transform="translate(2 105.12)"><tspan x="0" y="0">4</tspan></text>
+        </g>
+      </g>
+      <circle class="st3" cx="139.51" cy="113.82" r="9.55"/>
+      <g>
+        <rect class="st8" x="19.29" y="72.62" width="4.35" height="20.14" transform="translate(-52.18 39.4) rotate(-45)"/>
+        <rect class="st8" x="11.39" y="80.51" width="20.14" height="4.35" transform="translate(-52.18 39.39) rotate(-45)"/>
+      </g>
+    </g>
+  </g>
+  <g id="Db" class="st20">
+    <g id="pattern2" data-name="pattern">
+      <path class="st7" d="M21.25,225.77V96.79h118.77v128.98H21.25ZM22.53,98.07v126.43h116.21v-126.43H22.53Z"/>
+      <rect class="st7" x="44.75" y="97.3" width="1.28" height="127.7"/>
+      <rect class="st7" x="68.5" y="97.3" width="1.28" height="127.7"/>
+      <rect class="st7" x="92" y="97.3" width="1.28" height="127.7"/>
+      <rect class="st7" x="115.24" y="97.3" width="1.28" height="127.7"/>
+      <rect class="st7" x="22.02" y="128.71" width="117.49" height="1.28"/>
+      <rect class="st7" x="22.02" y="96.79" width="117.49" height="1.28"/>
+      <rect class="st7" x="22.02" y="160.64" width="117.49" height="1.28"/>
+      <rect class="st7" x="22.02" y="192.57" width="117.49" height="1.28"/>
+      <rect class="st7" x="22.02" y="224.49" width="117.49" height="1.28"/>
+      <g class="st15">
+        <g class="st15">
+          <text class="st9" transform="translate(54.65 58.08)"><tspan x="0" y="0">Db</tspan></text>
+        </g>
+      </g>
+      <circle class="st3" cx="68.78" cy="177.68" r="9.55"/>
+      <circle class="st4" cx="116.24" cy="177.32" r="9.55"/>
+      <circle class="st5" cx="92.28" cy="177.68" r="9.55"/>
+      <circle class="st5" cx="44.75" cy="113.82" r="9.55"/>
+      <g class="st15">
+        <g class="st15">
+          <text class="st10" transform="translate(2 105.12)"><tspan x="0" y="0">4</tspan></text>
+        </g>
+      </g>
+      <circle class="st3" cx="139.51" cy="113.82" r="9.55"/>
+      <g>
+        <rect class="st8" x="19.29" y="72.62" width="4.35" height="20.14" transform="translate(-52.18 39.4) rotate(-45)"/>
+        <rect class="st8" x="11.39" y="80.51" width="20.14" height="4.35" transform="translate(-52.18 39.39) rotate(-45)"/>
+      </g>
+    </g>
+  </g>
+  <g id="D7" class="st20">
+    <path class="st7" d="M21.25,231.77V102.79h118.77v128.98H21.25ZM22.53,104.07v126.43h116.21v-126.43H22.53Z"/>
+    <rect class="st7" x="44.75" y="103.3" width="1.28" height="127.7"/>
+    <rect class="st7" x="68.5" y="103.3" width="1.28" height="127.7"/>
+    <rect class="st7" x="92" y="103.3" width="1.28" height="127.7"/>
+    <rect class="st7" x="115.24" y="103.3" width="1.28" height="127.7"/>
+    <rect class="st7" x="22.02" y="134.71" width="117.49" height="1.28"/>
+    <rect class="st7" x="22.02" y="102.79" width="117.49" height="1.28"/>
+    <rect class="st7" x="22.02" y="166.64" width="117.49" height="1.28"/>
+    <rect class="st7" x="22.02" y="198.57" width="117.49" height="1.28"/>
+    <rect class="st7" x="22.02" y="230.49" width="117.49" height="1.28"/>
+    <rect class="st8" x="14.36" y="88.77" width="134.1" height="15.3"/>
+    <g class="st15">
+      <g class="st15">
+        <text class="st9" transform="translate(58.65 59.08)"><tspan x="0" y="0">D7</tspan></text>
+      </g>
+    </g>
+    <g>
+      <rect class="st8" x="19.29" y="67.62" width="4.35" height="20.14" transform="translate(-48.65 37.93) rotate(-45)"/>
+      <rect class="st8" x="11.39" y="75.51" width="20.14" height="4.35" transform="translate(-48.65 37.93) rotate(-45)"/>
+    </g>
+    <circle class="st4" cx="138.74" cy="151.32" r="9.55"/>
+    <circle class="st3" cx="92.28" cy="151.32" r="9.55"/>
+    <circle class="st6" cx="116.24" cy="119.32" r="9.55"/>
+    <circle class="st5" cx="69.14" cy="77.82" r="9.55"/>
+    <g>
+      <rect class="st8" x="42.29" y="67.62" width="4.35" height="20.14" transform="translate(-41.91 54.19) rotate(-45)"/>
+      <rect class="st8" x="34.39" y="75.51" width="20.14" height="4.35" transform="translate(-41.91 54.19) rotate(-45)"/>
+    </g>
+  </g>
+  <g id="Dm" class="st20">
+    <path class="st7" d="M21.25,231.77V102.79h118.77v128.98H21.25ZM22.53,104.07v126.43h116.21v-126.43H22.53Z"/>
+    <rect class="st7" x="44.75" y="103.3" width="1.28" height="127.7"/>
+    <rect class="st7" x="68.5" y="103.3" width="1.28" height="127.7"/>
+    <rect class="st7" x="92" y="103.3" width="1.28" height="127.7"/>
+    <rect class="st7" x="115.24" y="103.3" width="1.28" height="127.7"/>
+    <rect class="st7" x="22.02" y="134.71" width="117.49" height="1.28"/>
+    <rect class="st7" x="22.02" y="102.79" width="117.49" height="1.28"/>
+    <rect class="st7" x="22.02" y="166.64" width="117.49" height="1.28"/>
+    <rect class="st7" x="22.02" y="198.57" width="117.49" height="1.28"/>
+    <rect class="st7" x="22.02" y="230.49" width="117.49" height="1.28"/>
+    <rect class="st8" x="14.36" y="88.77" width="134.1" height="15.3"/>
+    <g class="st15">
+      <g class="st15">
+        <text class="st9" transform="translate(50.65 59.08)"><tspan x="0" y="0">Dm</tspan></text>
+      </g>
+    </g>
+    <g>
+      <rect class="st8" x="19.29" y="67.62" width="4.35" height="20.14" transform="translate(-48.65 37.93) rotate(-45)"/>
+      <rect class="st8" x="11.39" y="75.51" width="20.14" height="4.35" transform="translate(-48.65 37.93) rotate(-45)"/>
+    </g>
+    <circle class="st4" cx="138.74" cy="119.32" r="9.55"/>
+    <circle class="st3" cx="92.28" cy="151.32" r="9.55"/>
+    <circle class="st5" cx="116.24" cy="183.32" r="9.55"/>
+    <circle class="st5" cx="69.14" cy="77.82" r="9.55"/>
+    <g>
+      <rect class="st8" x="42.29" y="67.62" width="4.35" height="20.14" transform="translate(-41.91 54.19) rotate(-45)"/>
+      <rect class="st8" x="34.39" y="75.51" width="20.14" height="4.35" transform="translate(-41.91 54.19) rotate(-45)"/>
+    </g>
+  </g>
+  <g id="D" class="st20">
+    <path class="st7" d="M21.25,231.77V102.79h118.77v128.98H21.25ZM22.53,104.07v126.43h116.21v-126.43H22.53Z"/>
+    <rect class="st7" x="44.75" y="103.3" width="1.28" height="127.7"/>
+    <rect class="st7" x="68.5" y="103.3" width="1.28" height="127.7"/>
+    <rect class="st7" x="92" y="103.3" width="1.28" height="127.7"/>
+    <rect class="st7" x="115.24" y="103.3" width="1.28" height="127.7"/>
+    <rect class="st7" x="22.02" y="134.71" width="117.49" height="1.28"/>
+    <rect class="st7" x="22.02" y="102.79" width="117.49" height="1.28"/>
+    <rect class="st7" x="22.02" y="166.64" width="117.49" height="1.28"/>
+    <rect class="st7" x="22.02" y="198.57" width="117.49" height="1.28"/>
+    <rect class="st7" x="22.02" y="230.49" width="117.49" height="1.28"/>
+    <rect class="st8" x="14.36" y="88.77" width="134.1" height="15.3"/>
+    <g class="st15">
+      <g class="st15">
+        <text class="st9" transform="translate(67.65 59.08)"><tspan x="0" y="0">D</tspan></text>
+      </g>
+    </g>
+    <g>
+      <rect class="st8" x="19.29" y="67.62" width="4.35" height="20.14" transform="translate(-48.65 37.93) rotate(-45)"/>
+      <rect class="st8" x="11.39" y="75.51" width="20.14" height="4.35" transform="translate(-48.65 37.93) rotate(-45)"/>
+    </g>
+    <circle class="st4" cx="138.74" cy="151.32" r="9.55"/>
+    <circle class="st3" cx="92.28" cy="151.32" r="9.55"/>
+    <circle class="st5" cx="116.24" cy="183.32" r="9.55"/>
+    <circle class="st5" cx="69.14" cy="77.82" r="9.55"/>
+    <g>
+      <rect class="st8" x="42.29" y="67.62" width="4.35" height="20.14" transform="translate(-41.91 54.19) rotate(-45)"/>
+      <rect class="st8" x="34.39" y="75.51" width="20.14" height="4.35" transform="translate(-41.91 54.19) rotate(-45)"/>
+    </g>
+  </g>
+  <g id="Ebm" class="st20">
+    <path class="st7" d="M21.25,231.77V102.79h118.77v128.98H21.25ZM22.53,104.07v126.43h116.21v-126.43H22.53Z"/>
+    <rect class="st7" x="44.75" y="103.3" width="1.28" height="127.7"/>
+    <rect class="st7" x="68.5" y="103.3" width="1.28" height="127.7"/>
+    <rect class="st7" x="92" y="103.3" width="1.28" height="127.7"/>
+    <rect class="st7" x="115.24" y="103.3" width="1.28" height="127.7"/>
+    <rect class="st7" x="22.02" y="134.71" width="117.49" height="1.28"/>
+    <rect class="st7" x="22.02" y="102.79" width="117.49" height="1.28"/>
+    <rect class="st7" x="22.02" y="166.64" width="117.49" height="1.28"/>
+    <rect class="st7" x="22.02" y="198.57" width="117.49" height="1.28"/>
+    <rect class="st7" x="22.02" y="230.49" width="117.49" height="1.28"/>
+    <rect class="st8" x="14.36" y="88.77" width="134.1" height="15.3"/>
+    <g class="st15">
+      <g class="st15">
+        <text class="st9" transform="translate(39.65 59.08)"><tspan x="0" y="0">Ebm</tspan></text>
+      </g>
+    </g>
+    <g>
+      <rect class="st8" x="19.29" y="67.62" width="4.35" height="20.14" transform="translate(-48.65 37.93) rotate(-45)"/>
+      <rect class="st8" x="11.39" y="75.51" width="20.14" height="4.35" transform="translate(-48.65 37.93) rotate(-45)"/>
+    </g>
+    <circle class="st5" cx="115.24" cy="215.3" r="9.55"/>
+    <circle class="st4" cx="139.51" cy="151.79" r="9.55"/>
+    <circle class="st5" cx="68.14" cy="120.38" r="9.55"/>
+    <circle class="st3" cx="92.28" cy="182.79" r="9.55"/>
+    <g>
+      <rect class="st8" x="43.29" y="67.62" width="4.35" height="20.14" transform="translate(-41.62 54.9) rotate(-45)"/>
+      <rect class="st8" x="35.39" y="75.51" width="20.14" height="4.35" transform="translate(-41.62 54.9) rotate(-45)"/>
+    </g>
+  </g>
+  <g id="Eb7" class="st20">
+    <path class="st7" d="M21.25,231.77V102.79h118.77v128.98H21.25ZM22.53,104.07v126.43h116.21v-126.43H22.53Z"/>
+    <rect class="st7" x="44.75" y="103.3" width="1.28" height="127.7"/>
+    <rect class="st7" x="68.5" y="103.3" width="1.28" height="127.7"/>
+    <rect class="st7" x="92" y="103.3" width="1.28" height="127.7"/>
+    <rect class="st7" x="115.24" y="103.3" width="1.28" height="127.7"/>
+    <rect class="st7" x="22.02" y="134.71" width="117.49" height="1.28"/>
+    <rect class="st7" x="22.02" y="102.79" width="117.49" height="1.28"/>
+    <rect class="st7" x="22.02" y="166.64" width="117.49" height="1.28"/>
+    <rect class="st7" x="22.02" y="198.57" width="117.49" height="1.28"/>
+    <rect class="st7" x="22.02" y="230.49" width="117.49" height="1.28"/>
+    <rect class="st8" x="14.36" y="88.77" width="134.1" height="15.3"/>
+    <g class="st15">
+      <g class="st15">
+        <text class="st9" transform="translate(39.65 59.08)"><tspan x="0" y="0">Ebm</tspan></text>
+      </g>
+    </g>
+    <g>
+      <rect class="st8" x="19.29" y="67.62" width="4.35" height="20.14" transform="translate(-48.65 37.93) rotate(-45)"/>
+      <rect class="st8" x="11.39" y="75.51" width="20.14" height="4.35" transform="translate(-48.65 37.93) rotate(-45)"/>
+    </g>
+    <circle class="st6" cx="116.24" cy="152.3" r="9.55"/>
+    <circle class="st4" cx="139.51" cy="182.79" r="9.55"/>
+    <circle class="st5" cx="69.14" cy="120.38" r="9.55"/>
+    <circle class="st3" cx="92.28" cy="182.79" r="9.55"/>
+    <g>
+      <rect class="st8" x="43.29" y="67.62" width="4.35" height="20.14" transform="translate(-41.62 54.9) rotate(-45)"/>
+      <rect class="st8" x="35.39" y="75.51" width="20.14" height="4.35" transform="translate(-41.62 54.9) rotate(-45)"/>
+    </g>
+  </g>
+  <g id="Eb" class="st20">
+    <path class="st7" d="M21.25,231.77V102.79h118.77v128.98H21.25ZM22.53,104.07v126.43h116.21v-126.43H22.53Z"/>
+    <rect class="st7" x="44.75" y="103.3" width="1.28" height="127.7"/>
+    <rect class="st7" x="68.5" y="103.3" width="1.28" height="127.7"/>
+    <rect class="st7" x="92" y="103.3" width="1.28" height="127.7"/>
+    <rect class="st7" x="115.24" y="103.3" width="1.28" height="127.7"/>
+    <rect class="st7" x="22.02" y="134.71" width="117.49" height="1.28"/>
+    <rect class="st7" x="22.02" y="102.79" width="117.49" height="1.28"/>
+    <rect class="st7" x="22.02" y="166.64" width="117.49" height="1.28"/>
+    <rect class="st7" x="22.02" y="198.57" width="117.49" height="1.28"/>
+    <rect class="st7" x="22.02" y="230.49" width="117.49" height="1.28"/>
+    <rect class="st8" x="14.36" y="88.77" width="134.1" height="15.3"/>
+    <g class="st15">
+      <g class="st15">
+        <text class="st9" transform="translate(57.65 59.08)"><tspan x="0" y="0">Eb</tspan></text>
+      </g>
+    </g>
+    <g>
+      <rect class="st8" x="19.29" y="67.62" width="4.35" height="20.14" transform="translate(-48.65 37.93) rotate(-45)"/>
+      <rect class="st8" x="11.39" y="75.51" width="20.14" height="4.35" transform="translate(-48.65 37.93) rotate(-45)"/>
+    </g>
+    <circle class="st5" cx="115.24" cy="215.3" r="9.55"/>
+    <circle class="st4" cx="139.51" cy="182.79" r="9.55"/>
+    <circle class="st5" cx="69.14" cy="120.38" r="9.55"/>
+    <circle class="st3" cx="92.28" cy="182.79" r="9.55"/>
+    <g>
+      <rect class="st8" x="43.29" y="67.62" width="4.35" height="20.14" transform="translate(-41.62 54.9) rotate(-45)"/>
+      <rect class="st8" x="35.39" y="75.51" width="20.14" height="4.35" transform="translate(-41.62 54.9) rotate(-45)"/>
+    </g>
+  </g>
+  <g id="E7" class="st20">
+    <path class="st7" d="M21.25,231.77V102.79h118.77v128.98H21.25ZM22.53,104.07v126.43h116.21v-126.43H22.53Z"/>
+    <rect class="st7" x="44.75" y="103.3" width="1.28" height="127.7"/>
+    <rect class="st7" x="68.5" y="103.3" width="1.28" height="127.7"/>
+    <rect class="st7" x="92" y="103.3" width="1.28" height="127.7"/>
+    <rect class="st7" x="115.24" y="103.3" width="1.28" height="127.7"/>
+    <rect class="st7" x="22.02" y="134.71" width="117.49" height="1.28"/>
+    <rect class="st7" x="22.02" y="102.79" width="117.49" height="1.28"/>
+    <rect class="st7" x="22.02" y="166.64" width="117.49" height="1.28"/>
+    <rect class="st7" x="22.02" y="198.57" width="117.49" height="1.28"/>
+    <rect class="st7" x="22.02" y="230.49" width="117.49" height="1.28"/>
+    <rect class="st8" x="14.36" y="88.77" width="134.1" height="15.3"/>
+    <g class="st15">
+      <g class="st15">
+        <text class="st9" transform="translate(62.65 59.08)"><tspan x="0" y="0">E7</tspan></text>
+      </g>
+    </g>
+    <circle class="st5" cx="138.74" cy="76.74" r="9.55"/>
+    <circle class="st4" cx="91.88" cy="118.51" r="9.55"/>
+    <circle class="st5" cx="68.64" cy="151.32" r="9.55"/>
+    <circle class="st5" cx="22.02" cy="76.74" r="9.55"/>
+    <circle class="st3" cx="44.89" cy="151.37" r="9.55"/>
+    <circle class="st6" cx="115.88" cy="183.64" r="9.55"/>
+  </g>
+  <g id="Em" class="st20">
+    <path class="st7" d="M21.25,231.77V102.79h118.77v128.98H21.25ZM22.53,104.07v126.43h116.21v-126.43H22.53Z"/>
+    <rect class="st7" x="44.75" y="103.3" width="1.28" height="127.7"/>
+    <rect class="st7" x="68.5" y="103.3" width="1.28" height="127.7"/>
+    <rect class="st7" x="92" y="103.3" width="1.28" height="127.7"/>
+    <rect class="st7" x="115.24" y="103.3" width="1.28" height="127.7"/>
+    <rect class="st7" x="22.02" y="134.71" width="117.49" height="1.28"/>
+    <rect class="st7" x="22.02" y="102.79" width="117.49" height="1.28"/>
+    <rect class="st7" x="22.02" y="166.64" width="117.49" height="1.28"/>
+    <rect class="st7" x="22.02" y="198.57" width="117.49" height="1.28"/>
+    <rect class="st7" x="22.02" y="230.49" width="117.49" height="1.28"/>
+    <rect class="st8" x="14.36" y="88.77" width="134.1" height="15.3"/>
+    <g class="st15">
+      <g class="st15">
+        <text class="st9" transform="translate(52.65 59.08)"><tspan x="0" y="0">Em</tspan></text>
+      </g>
+    </g>
+    <circle class="st5" cx="138.74" cy="77.51" r="9.55"/>
+    <circle class="st4" cx="92.88" cy="77.51" r="9.55"/>
+    <circle class="st5" cx="68.64" cy="151.32" r="9.55"/>
+    <circle class="st5" cx="22.02" cy="77.51" r="9.55"/>
+    <circle class="st3" cx="44.89" cy="151.37" r="9.55"/>
+    <circle class="st3" cx="115.24" cy="77.51" r="9.55"/>
+  </g>
+  <g id="E" class="st20">
+    <path class="st7" d="M21.25,231.77V102.79h118.77v128.98H21.25ZM22.53,104.07v126.43h116.21v-126.43H22.53Z"/>
+    <rect class="st7" x="44.75" y="103.3" width="1.28" height="127.7"/>
+    <rect class="st7" x="68.5" y="103.3" width="1.28" height="127.7"/>
+    <rect class="st7" x="92" y="103.3" width="1.28" height="127.7"/>
+    <rect class="st7" x="115.24" y="103.3" width="1.28" height="127.7"/>
+    <rect class="st7" x="22.02" y="134.71" width="117.49" height="1.28"/>
+    <rect class="st7" x="22.02" y="102.79" width="117.49" height="1.28"/>
+    <rect class="st7" x="22.02" y="166.64" width="117.49" height="1.28"/>
+    <rect class="st7" x="22.02" y="198.57" width="117.49" height="1.28"/>
+    <rect class="st7" x="22.02" y="230.49" width="117.49" height="1.28"/>
+    <rect class="st8" x="14.36" y="88.77" width="134.1" height="15.3"/>
+    <g class="st15">
+      <g class="st15">
+        <text class="st9" transform="translate(71.65 59.08)"><tspan x="0" y="0">E</tspan></text>
+      </g>
+    </g>
+    <circle class="st5" cx="138.74" cy="76.74" r="9.55"/>
+    <circle class="st4" cx="91.88" cy="118.51" r="9.55"/>
+    <circle class="st5" cx="68.64" cy="151.32" r="9.55"/>
+    <circle class="st5" cx="22.02" cy="76.74" r="9.55"/>
+    <circle class="st3" cx="44.89" cy="151.37" r="9.55"/>
+    <circle class="st3" cx="115.24" cy="76.74" r="9.55"/>
+  </g>
+  <g id="F7" class="st20">
+    <path class="st7" d="M21.25,231.77V102.79h118.77v128.98H21.25ZM22.53,104.07v126.43h116.21v-126.43H22.53Z"/>
+    <rect class="st7" x="44.75" y="103.3" width="1.28" height="127.7"/>
+    <rect class="st7" x="68.5" y="103.3" width="1.28" height="127.7"/>
+    <rect class="st7" x="92" y="103.3" width="1.28" height="127.7"/>
+    <rect class="st7" x="115.24" y="103.3" width="1.28" height="127.7"/>
+    <rect class="st7" x="22.02" y="134.71" width="117.49" height="1.28"/>
+    <rect class="st7" x="22.02" y="102.79" width="117.49" height="1.28"/>
+    <rect class="st7" x="22.02" y="166.64" width="117.49" height="1.28"/>
+    <rect class="st7" x="22.02" y="198.57" width="117.49" height="1.28"/>
+    <rect class="st7" x="22.02" y="230.49" width="117.49" height="1.28"/>
+    <rect class="st8" x="14.36" y="88.77" width="134.1" height="15.3"/>
+    <g class="st15">
+      <g class="st15">
+        <text class="st9" transform="translate(61.65 59.08)"><tspan x="0" y="0">F7</tspan></text>
+      </g>
+    </g>
+    <circle class="st5" cx="138.74" cy="120.32" r="9.55"/>
+    <circle class="st4" cx="91.88" cy="151.51" r="9.55"/>
+    <circle class="st6" cx="68.64" cy="120.32" r="9.55"/>
+    <circle class="st5" cx="22.02" cy="120.32" r="9.55"/>
+    <circle class="st3" cx="44.89" cy="183.37" r="9.55"/>
+    <circle class="st3" cx="115.24" cy="120.32" r="9.55"/>
+  </g>
+  <g id="Fm" class="st20">
+    <path class="st7" d="M21.25,231.77V102.79h118.77v128.98H21.25ZM22.53,104.07v126.43h116.21v-126.43H22.53Z"/>
+    <rect class="st7" x="44.75" y="103.3" width="1.28" height="127.7"/>
+    <rect class="st7" x="68.5" y="103.3" width="1.28" height="127.7"/>
+    <rect class="st7" x="92" y="103.3" width="1.28" height="127.7"/>
+    <rect class="st7" x="115.24" y="103.3" width="1.28" height="127.7"/>
+    <rect class="st7" x="22.02" y="134.71" width="117.49" height="1.28"/>
+    <rect class="st7" x="22.02" y="102.79" width="117.49" height="1.28"/>
+    <rect class="st7" x="22.02" y="166.64" width="117.49" height="1.28"/>
+    <rect class="st7" x="22.02" y="198.57" width="117.49" height="1.28"/>
+    <rect class="st7" x="22.02" y="230.49" width="117.49" height="1.28"/>
+    <rect class="st8" x="14.36" y="88.77" width="134.1" height="15.3"/>
+    <g class="st15">
+      <g class="st15">
+        <text class="st9" transform="translate(52.65 59.08)"><tspan x="0" y="0">Fm</tspan></text>
+      </g>
+    </g>
+    <circle class="st5" cx="138.74" cy="118.74" r="9.55"/>
+    <circle class="st4" cx="91.88" cy="119.51" r="9.55"/>
+    <circle class="st5" cx="68.64" cy="184.32" r="9.55"/>
+    <circle class="st5" cx="22.02" cy="118.74" r="9.55"/>
+    <circle class="st3" cx="44.89" cy="184.37" r="9.55"/>
+    <circle class="st3" cx="115.24" cy="118.74" r="9.55"/>
+  </g>
+  <g id="F" class="st20">
+    <path class="st7" d="M21.25,231.77V102.79h118.77v128.98H21.25ZM22.53,104.07v126.43h116.21v-126.43H22.53Z"/>
+    <rect class="st7" x="44.75" y="103.3" width="1.28" height="127.7"/>
+    <rect class="st7" x="68.5" y="103.3" width="1.28" height="127.7"/>
+    <rect class="st7" x="92" y="103.3" width="1.28" height="127.7"/>
+    <rect class="st7" x="115.24" y="103.3" width="1.28" height="127.7"/>
+    <rect class="st7" x="22.02" y="134.71" width="117.49" height="1.28"/>
+    <rect class="st7" x="22.02" y="102.79" width="117.49" height="1.28"/>
+    <rect class="st7" x="22.02" y="166.64" width="117.49" height="1.28"/>
+    <rect class="st7" x="22.02" y="198.57" width="117.49" height="1.28"/>
+    <rect class="st7" x="22.02" y="230.49" width="117.49" height="1.28"/>
+    <rect class="st8" x="14.36" y="88.77" width="134.1" height="15.3"/>
+    <g class="st15">
+      <g class="st15">
+        <text class="st9" transform="translate(71.65 59.08)"><tspan x="0" y="0">F</tspan></text>
+      </g>
+    </g>
+    <circle class="st5" cx="138.74" cy="118.74" r="9.55"/>
+    <circle class="st4" cx="91.88" cy="151.51" r="9.55"/>
+    <circle class="st5" cx="68.64" cy="184.32" r="9.55"/>
+    <circle class="st5" cx="22.02" cy="118.74" r="9.55"/>
+    <circle class="st3" cx="44.89" cy="184.37" r="9.55"/>
+    <circle class="st3" cx="115.24" cy="118.74" r="9.55"/>
+  </g>
+  <g id="Gb7" class="st20">
+    <path class="st7" d="M21.25,231.77V102.79h118.77v128.98H21.25ZM22.53,104.07v126.43h116.21v-126.43H22.53Z"/>
+    <rect class="st7" x="44.75" y="103.3" width="1.28" height="127.7"/>
+    <rect class="st7" x="68.5" y="103.3" width="1.28" height="127.7"/>
+    <rect class="st7" x="92" y="103.3" width="1.28" height="127.7"/>
+    <rect class="st7" x="115.24" y="103.3" width="1.28" height="127.7"/>
+    <rect class="st7" x="22.02" y="134.71" width="117.49" height="1.28"/>
+    <rect class="st7" x="22.02" y="102.79" width="117.49" height="1.28"/>
+    <rect class="st7" x="22.02" y="166.64" width="117.49" height="1.28"/>
+    <rect class="st7" x="22.02" y="198.57" width="117.49" height="1.28"/>
+    <rect class="st7" x="22.02" y="230.49" width="117.49" height="1.28"/>
+    <rect class="st8" x="14.36" y="88.77" width="134.1" height="15.3"/>
+    <g class="st15">
+      <g class="st15">
+        <text class="st9" transform="translate(46.65 59.08)"><tspan x="0" y="0">F#7</tspan></text>
+      </g>
+    </g>
+    <circle class="st5" cx="138.74" cy="150.74" r="9.55"/>
+    <circle class="st4" cx="91.88" cy="183.51" r="9.55"/>
+    <circle class="st5" cx="68.64" cy="216.32" r="9.55"/>
+    <circle class="st5" cx="22.02" cy="150.74" r="9.55"/>
+    <circle class="st3" cx="44.89" cy="216.37" r="9.55"/>
+    <circle class="st3" cx="115.24" cy="150.74" r="9.55"/>
+  </g>
+  <g id="Gbm" class="st20">
+    <path class="st7" d="M21.25,231.77V102.79h118.77v128.98H21.25ZM22.53,104.07v126.43h116.21v-126.43H22.53Z"/>
+    <rect class="st7" x="44.75" y="103.3" width="1.28" height="127.7"/>
+    <rect class="st7" x="68.5" y="103.3" width="1.28" height="127.7"/>
+    <rect class="st7" x="92" y="103.3" width="1.28" height="127.7"/>
+    <rect class="st7" x="115.24" y="103.3" width="1.28" height="127.7"/>
+    <rect class="st7" x="22.02" y="134.71" width="117.49" height="1.28"/>
+    <rect class="st7" x="22.02" y="102.79" width="117.49" height="1.28"/>
+    <rect class="st7" x="22.02" y="166.64" width="117.49" height="1.28"/>
+    <rect class="st7" x="22.02" y="198.57" width="117.49" height="1.28"/>
+    <rect class="st7" x="22.02" y="230.49" width="117.49" height="1.28"/>
+    <rect class="st8" x="14.36" y="88.77" width="134.1" height="15.3"/>
+    <g class="st15">
+      <g class="st15">
+        <text class="st9" transform="translate(38.65 59.08)"><tspan x="0" y="0">F#m</tspan></text>
+      </g>
+    </g>
+    <circle class="st5" cx="138.74" cy="150.74" r="9.55"/>
+    <circle class="st4" cx="91.88" cy="151.51" r="9.55"/>
+    <circle class="st5" cx="68.64" cy="216.32" r="9.55"/>
+    <circle class="st5" cx="22.02" cy="150.74" r="9.55"/>
+    <circle class="st3" cx="44.89" cy="216.37" r="9.55"/>
+    <circle class="st3" cx="115.24" cy="150.74" r="9.55"/>
+  </g>
+  <g id="Gb" class="st20">
+    <path class="st7" d="M21.25,231.77V102.79h118.77v128.98H21.25ZM22.53,104.07v126.43h116.21v-126.43H22.53Z"/>
+    <rect class="st7" x="44.75" y="103.3" width="1.28" height="127.7"/>
+    <rect class="st7" x="68.5" y="103.3" width="1.28" height="127.7"/>
+    <rect class="st7" x="92" y="103.3" width="1.28" height="127.7"/>
+    <rect class="st7" x="115.24" y="103.3" width="1.28" height="127.7"/>
+    <rect class="st7" x="22.02" y="134.71" width="117.49" height="1.28"/>
+    <rect class="st7" x="22.02" y="102.79" width="117.49" height="1.28"/>
+    <rect class="st7" x="22.02" y="166.64" width="117.49" height="1.28"/>
+    <rect class="st7" x="22.02" y="198.57" width="117.49" height="1.28"/>
+    <rect class="st7" x="22.02" y="230.49" width="117.49" height="1.28"/>
+    <rect class="st8" x="14.36" y="88.77" width="134.1" height="15.3"/>
+    <g class="st15">
+      <g class="st15">
+        <text class="st9" transform="translate(56.65 59.08)"><tspan x="0" y="0">F#</tspan></text>
+      </g>
+    </g>
+    <circle class="st5" cx="138.74" cy="150.74" r="9.55"/>
+    <circle class="st4" cx="91.88" cy="183.51" r="9.55"/>
+    <circle class="st5" cx="68.64" cy="216.32" r="9.55"/>
+    <circle class="st5" cx="22.02" cy="150.74" r="9.55"/>
+    <circle class="st3" cx="44.89" cy="216.37" r="9.55"/>
+    <circle class="st3" cx="115.24" cy="150.74" r="9.55"/>
+  </g>
+  <g id="G7" class="st20">
+    <g class="st20">
+      <g>
+        <g>
+          <g>
+            <polygon class="st22" points="121.43 47.49 122.43 219.09 51.53 219.09 52.63 47.49 121.43 47.49"/>
+            <g>
+              <rect class="st23" x="52.33" y="94.59" width="69.4" height="4.1"/>
+              <path class="st0" d="M54.33,96.59h0c0,1.1-.9,2-2,2h0v-4.1h0c1.1,0,2,.9,2,2v.1Z"/>
+              <path class="st0" d="M119.63,96.59h0c0-1.1.9-2,2-2h0v4.1h0c-1.1,0-2-.9-2-2v-.1Z"/>
+            </g>
+            <g>
+              <rect class="st11" x="52.83" y="47.39" width="68.5" height="4.1"/>
+              <path class="st0" d="M54.73,49.39h0c0,1.2-.9,2.1-2,2.1h0v-4.1h0c1.1,0,2,.9,2,2Z"/>
+              <path class="st0" d="M119.23,49.39h0c0-1.2.9-2.1,2-2.1h0v4.1h0c-1.1,0-2-.9-2-2Z"/>
+            </g>
+            <path class="st1" d="M52.33,58.79v-10.7c0-.5.4-.9.9-.9h67.6c.5,0,.9.4.9.9v10.7H52.33Z"/>
+            <g>
+              <rect class="st19" x="51.93" y="133.19" width="70.1" height="4.1"/>
+              <path class="st0" d="M54.03,135.29h0c0,1.1-.9,2-2,2h0v-4.1h0c1.1,0,2,.9,2,2v.1Z"/>
+              <path class="st0" d="M120.03,135.29h0c0-1.1.9-2,2-2h0v4.1h0c-1.1,0-2-.9-2-2v-.1Z"/>
+            </g>
+            <g>
+              <rect class="st17" x="51.63" y="170.99" width="70.8" height="4.1"/>
+              <path class="st0" d="M53.63,173.09h0c0,1.1-.9,2-2,2h0v-4.1h0c1.1,0,2,.9,2,2v.1Z"/>
+              <path class="st0" d="M120.33,173.09h0c0-1.1.9-2,2-2h0v4.1h0c-1.1,0-2-.9-2-2v-.1Z"/>
+            </g>
+            <g>
+              <rect class="st18" x="51.23" y="208.59" width="71.5" height="4.1"/>
+              <path class="st0" d="M53.33,210.59h0c0,1.1-.9,2-2,2h0v-4.1h0c1.1,0,2,.9,2,2v.1Z"/>
+              <path class="st0" d="M120.73,210.59h0c0-1.1.9-2,2-2h0v4.1h0c-1.1,0-2-.9-2-2v-.1Z"/>
+            </g>
+            <g>
+              <rect class="st21" x="54.33" y="47.29" width="3.2" height="171.8"/>
+              <rect class="st16" x="118.13" y="47.29" width="1.1" height="171.8"/>
+              <rect class="st13" x="105.33" y="47.19" width="1.5" height="171.8"/>
+              <rect class="st12" x="92.63" y="47.29" width="1.9" height="171.8"/>
+              <rect class="st2" x="79.83" y="47.29" width="2.3" height="171.8"/>
+              <rect class="st14" x="67.03" y="47.19" width="2.7" height="171.8"/>
+            </g>
+          </g>
+          <g>
+            <path class="st0" d="M74.03,114.89c0,3-2.4,5.5-5.5,5.5s-5.5-2.4-5.5-5.5,2.4-5.5,5.5-5.5,5.5,2.4,5.5,5.5Z"/>
+            <path class="st0" d="M99.23,114.89c0,3-2.4,5.5-5.5,5.5s-5.5-2.4-5.5-5.5,2.4-5.5,5.5-5.5,5.5,2.4,5.5,5.5Z"/>
+            <path class="st0" d="M124.43,114.89c0,3-2.4,5.5-5.5,5.5s-5.5-2.4-5.5-5.5,2.4-5.5,5.5-5.5,5.5,2.4,5.5,5.5Z"/>
+          </g>
+          <g>
+            <path class="st0" d="M86.63,191.99c0,3-2.4,5.5-5.5,5.5s-5.5-2.4-5.5-5.5,2.4-5.5,5.5-5.5,5.5,2.4,5.5,5.5Z"/>
+            <path class="st0" d="M111.83,191.99c0,3-2.4,5.5-5.5,5.5s-5.5-2.4-5.5-5.5,2.4-5.5,5.5-5.5,5.5,2.4,5.5,5.5Z"/>
+          </g>
+        </g>
+        <g>
+          <path class="st8" d="M72.43,10.49h8.6c2.4,0,4,.7,5,2.1.6.8.9,1.8.9,2.9s-.4,2.3-1.1,3.1c-.4.4-.9.8-1.6,1.2,1,.4,1.8.8,2.3,1.3.9.9,1.4,2.1,1.4,3.6s-.4,2.5-1.2,3.5c-1.2,1.6-3.1,2.4-5.8,2.4h-8.5s0-20.1,0-20.1ZM80.03,18.89c1.1,0,2-.2,2.7-.5,1-.5,1.5-1.4,1.5-2.7s-.5-2.2-1.6-2.7c-.6-.3-1.5-.4-2.7-.4h-4.9v6.2h4.9s.1.1.1.1ZM80.93,28.19c1.7,0,2.9-.5,3.6-1.4.4-.6.7-1.3.7-2.2,0-1.5-.7-2.5-2-3-.7-.3-1.6-.4-2.7-.4h-5.4v7.1h5.9l-.1-.1Z"/>
+          <path class="st8" d="M103.63,11.29v2.1c-.6.6-1.5,1.7-2.5,3.2-1,1.5-2,3.1-2.8,4.9-.8,1.7-1.4,3.3-1.8,4.7-.3.9-.6,2.4-1,4.4h-2.7c.6-3.7,2-7.5,4.1-11.2,1.2-2.2,2.6-4,3.9-5.6h-10.8v-2.5s13.6,0,13.6,0Z"/>
+        </g>
+      </g>
+      <g>
+        <path class="st8" d="M52.93,43.19c-.2,0-.4,0-.6-.2-.3-.3-.3-.8,0-1.1l5-5c.3-.3.8-.3,1.1,0s.3.8,0,1.1l-5,5c-.2.2-.4.2-.6.2h.1Z"/>
+        <path class="st8" d="M57.93,43.19c-.2,0-.4,0-.6-.2l-5-5c-.3-.3-.3-.8,0-1.1s.8-.3,1.1,0l5,5c.3.3.3.8,0,1.1-.2.2-.4.2-.6.2h.1Z"/>
+      </g>
+    </g>
+    <path class="st7" d="M21.25,231.77V102.79h118.77v128.98H21.25ZM22.53,104.07v126.43h116.21v-126.43H22.53Z"/>
+    <rect class="st7" x="44.75" y="103.3" width="1.28" height="127.7"/>
+    <rect class="st7" x="68.5" y="103.3" width="1.28" height="127.7"/>
+    <rect class="st7" x="92" y="103.3" width="1.28" height="127.7"/>
+    <rect class="st7" x="115.24" y="103.3" width="1.28" height="127.7"/>
+    <rect class="st7" x="22.02" y="134.71" width="117.49" height="1.28"/>
+    <rect class="st7" x="22.02" y="102.79" width="117.49" height="1.28"/>
+    <rect class="st7" x="22.02" y="166.64" width="117.49" height="1.28"/>
+    <rect class="st7" x="22.02" y="198.57" width="117.49" height="1.28"/>
+    <rect class="st7" x="22.02" y="230.49" width="117.49" height="1.28"/>
+    <rect class="st8" x="14.36" y="88.77" width="134.1" height="15.3"/>
+    <g class="st15">
+      <g class="st15">
+        <text class="st9" transform="translate(65.65 60.08)"><tspan x="0" y="0">G</tspan></text>
+      </g>
+    </g>
+    <circle class="st3" cx="69.65" cy="77.24" r="9.55"/>
+    <circle class="st4" cx="45.39" cy="151.57" r="9.55"/>
+    <circle class="st5" cx="22.02" cy="182.28" r="9.55"/>
+    <circle class="st5" cx="93.28" cy="77.24" r="9.55"/>
+    <circle class="st4" cx="116.52" cy="77.24" r="9.55"/>
+    <circle class="st6" cx="139.51" cy="119.63" r="9.55"/>
+  </g>
+  <g id="Gm" class="st20">
+    <g id="pattern3" data-name="pattern">
+      <path class="st7" d="M21.25,225.77V96.79h118.77v128.98H21.25ZM22.53,98.07v126.43h116.21v-126.43H22.53Z"/>
+      <rect class="st7" x="44.75" y="97.3" width="1.28" height="127.7"/>
+      <rect class="st7" x="68.5" y="97.3" width="1.28" height="127.7"/>
+      <rect class="st7" x="92" y="97.3" width="1.28" height="127.7"/>
+      <rect class="st7" x="115.24" y="97.3" width="1.28" height="127.7"/>
+      <rect class="st7" x="22.02" y="128.71" width="117.49" height="1.28"/>
+      <rect class="st7" x="22.02" y="96.79" width="117.49" height="1.28"/>
+      <rect class="st7" x="22.02" y="160.64" width="117.49" height="1.28"/>
+      <rect class="st7" x="22.02" y="192.57" width="117.49" height="1.28"/>
+      <rect class="st7" x="22.02" y="224.49" width="117.49" height="1.28"/>
+      <g class="st15">
+        <g class="st15">
+          <text class="st9" transform="translate(49.65 58.08)"><tspan x="0" y="0">Gm</tspan></text>
+        </g>
+      </g>
+      <circle class="st3" cx="45.78" cy="177.68" r="9.55"/>
+      <circle class="st4" cx="93.24" cy="114.32" r="9.55"/>
+      <circle class="st5" cx="69.28" cy="177.68" r="9.55"/>
+      <circle class="st5" cx="21.75" cy="113.82" r="9.55"/>
+      <g class="st15">
+        <g class="st15">
+          <text class="st10" transform="translate(2 105.12)"><tspan x="0" y="0">3</tspan></text>
+        </g>
+      </g>
+      <circle class="st3" cx="116.51" cy="113.82" r="9.55"/>
+      <circle class="st5" cx="139.75" cy="113.82" r="9.55"/>
+    </g>
+  </g>
+  <g id="G" class="st20">
+    <g class="st20">
+      <g>
+        <g>
+          <g>
+            <polygon class="st22" points="121.43 47.49 122.43 219.09 51.53 219.09 52.63 47.49 121.43 47.49"/>
+            <g>
+              <rect class="st23" x="52.33" y="94.59" width="69.4" height="4.1"/>
+              <path class="st0" d="M54.33,96.59h0c0,1.1-.9,2-2,2h0v-4.1h0c1.1,0,2,.9,2,2v.1Z"/>
+              <path class="st0" d="M119.63,96.59h0c0-1.1.9-2,2-2h0v4.1h0c-1.1,0-2-.9-2-2v-.1Z"/>
+            </g>
+            <g>
+              <rect class="st11" x="52.83" y="47.39" width="68.5" height="4.1"/>
+              <path class="st0" d="M54.73,49.39h0c0,1.2-.9,2.1-2,2.1h0v-4.1h0c1.1,0,2,.9,2,2Z"/>
+              <path class="st0" d="M119.23,49.39h0c0-1.2.9-2.1,2-2.1h0v4.1h0c-1.1,0-2-.9-2-2Z"/>
+            </g>
+            <path class="st1" d="M52.33,58.79v-10.7c0-.5.4-.9.9-.9h67.6c.5,0,.9.4.9.9v10.7H52.33Z"/>
+            <g>
+              <rect class="st19" x="51.93" y="133.19" width="70.1" height="4.1"/>
+              <path class="st0" d="M54.03,135.29h0c0,1.1-.9,2-2,2h0v-4.1h0c1.1,0,2,.9,2,2v.1Z"/>
+              <path class="st0" d="M120.03,135.29h0c0-1.1.9-2,2-2h0v4.1h0c-1.1,0-2-.9-2-2v-.1Z"/>
+            </g>
+            <g>
+              <rect class="st17" x="51.63" y="170.99" width="70.8" height="4.1"/>
+              <path class="st0" d="M53.63,173.09h0c0,1.1-.9,2-2,2h0v-4.1h0c1.1,0,2,.9,2,2v.1Z"/>
+              <path class="st0" d="M120.33,173.09h0c0-1.1.9-2,2-2h0v4.1h0c-1.1,0-2-.9-2-2v-.1Z"/>
+            </g>
+            <g>
+              <rect class="st18" x="51.23" y="208.59" width="71.5" height="4.1"/>
+              <path class="st0" d="M53.33,210.59h0c0,1.1-.9,2-2,2h0v-4.1h0c1.1,0,2,.9,2,2v.1Z"/>
+              <path class="st0" d="M120.73,210.59h0c0-1.1.9-2,2-2h0v4.1h0c-1.1,0-2-.9-2-2v-.1Z"/>
+            </g>
+            <g>
+              <rect class="st21" x="54.33" y="47.29" width="3.2" height="171.8"/>
+              <rect class="st16" x="118.13" y="47.29" width="1.1" height="171.8"/>
+              <rect class="st13" x="105.33" y="47.19" width="1.5" height="171.8"/>
+              <rect class="st12" x="92.63" y="47.29" width="1.9" height="171.8"/>
+              <rect class="st2" x="79.83" y="47.29" width="2.3" height="171.8"/>
+              <rect class="st14" x="67.03" y="47.19" width="2.7" height="171.8"/>
+            </g>
+          </g>
+          <g>
+            <path class="st0" d="M74.03,114.89c0,3-2.4,5.5-5.5,5.5s-5.5-2.4-5.5-5.5,2.4-5.5,5.5-5.5,5.5,2.4,5.5,5.5Z"/>
+            <path class="st0" d="M99.23,114.89c0,3-2.4,5.5-5.5,5.5s-5.5-2.4-5.5-5.5,2.4-5.5,5.5-5.5,5.5,2.4,5.5,5.5Z"/>
+            <path class="st0" d="M124.43,114.89c0,3-2.4,5.5-5.5,5.5s-5.5-2.4-5.5-5.5,2.4-5.5,5.5-5.5,5.5,2.4,5.5,5.5Z"/>
+          </g>
+          <g>
+            <path class="st0" d="M86.63,191.99c0,3-2.4,5.5-5.5,5.5s-5.5-2.4-5.5-5.5,2.4-5.5,5.5-5.5,5.5,2.4,5.5,5.5Z"/>
+            <path class="st0" d="M111.83,191.99c0,3-2.4,5.5-5.5,5.5s-5.5-2.4-5.5-5.5,2.4-5.5,5.5-5.5,5.5,2.4,5.5,5.5Z"/>
+          </g>
+        </g>
+        <g>
+          <path class="st8" d="M72.43,10.49h8.6c2.4,0,4,.7,5,2.1.6.8.9,1.8.9,2.9s-.4,2.3-1.1,3.1c-.4.4-.9.8-1.6,1.2,1,.4,1.8.8,2.3,1.3.9.9,1.4,2.1,1.4,3.6s-.4,2.5-1.2,3.5c-1.2,1.6-3.1,2.4-5.8,2.4h-8.5s0-20.1,0-20.1ZM80.03,18.89c1.1,0,2-.2,2.7-.5,1-.5,1.5-1.4,1.5-2.7s-.5-2.2-1.6-2.7c-.6-.3-1.5-.4-2.7-.4h-4.9v6.2h4.9s.1.1.1.1ZM80.93,28.19c1.7,0,2.9-.5,3.6-1.4.4-.6.7-1.3.7-2.2,0-1.5-.7-2.5-2-3-.7-.3-1.6-.4-2.7-.4h-5.4v7.1h5.9l-.1-.1Z"/>
+          <path class="st8" d="M103.63,11.29v2.1c-.6.6-1.5,1.7-2.5,3.2-1,1.5-2,3.1-2.8,4.9-.8,1.7-1.4,3.3-1.8,4.7-.3.9-.6,2.4-1,4.4h-2.7c.6-3.7,2-7.5,4.1-11.2,1.2-2.2,2.6-4,3.9-5.6h-10.8v-2.5s13.6,0,13.6,0Z"/>
+        </g>
+      </g>
+      <g>
+        <path class="st8" d="M52.93,43.19c-.2,0-.4,0-.6-.2-.3-.3-.3-.8,0-1.1l5-5c.3-.3.8-.3,1.1,0s.3.8,0,1.1l-5,5c-.2.2-.4.2-.6.2h.1Z"/>
+        <path class="st8" d="M57.93,43.19c-.2,0-.4,0-.6-.2l-5-5c-.3-.3-.3-.8,0-1.1s.8-.3,1.1,0l5,5c.3.3.3.8,0,1.1-.2.2-.4.2-.6.2h.1Z"/>
+      </g>
+    </g>
+    <path class="st7" d="M21.25,231.77V102.79h118.77v128.98H21.25ZM22.53,104.07v126.43h116.21v-126.43H22.53Z"/>
+    <rect class="st7" x="44.75" y="103.3" width="1.28" height="127.7"/>
+    <rect class="st7" x="68.5" y="103.3" width="1.28" height="127.7"/>
+    <rect class="st7" x="92" y="103.3" width="1.28" height="127.7"/>
+    <rect class="st7" x="115.24" y="103.3" width="1.28" height="127.7"/>
+    <rect class="st7" x="22.02" y="134.71" width="117.49" height="1.28"/>
+    <rect class="st7" x="22.02" y="102.79" width="117.49" height="1.28"/>
+    <rect class="st7" x="22.02" y="166.64" width="117.49" height="1.28"/>
+    <rect class="st7" x="22.02" y="198.57" width="117.49" height="1.28"/>
+    <rect class="st7" x="22.02" y="230.49" width="117.49" height="1.28"/>
+    <rect class="st8" x="14.36" y="88.77" width="134.1" height="15.3"/>
+    <g class="st15">
+      <g class="st15">
+        <text class="st9" transform="translate(65.65 60.08)"><tspan x="0" y="0">G</tspan></text>
+      </g>
+    </g>
+    <circle class="st3" cx="69.65" cy="77.24" r="9.55"/>
+    <circle class="st4" cx="45.39" cy="151.57" r="9.55"/>
+    <circle class="st5" cx="22.02" cy="182.28" r="9.55"/>
+    <circle class="st5" cx="93.28" cy="77.24" r="9.55"/>
+    <circle class="st4" cx="116.52" cy="77.24" r="9.55"/>
+    <circle class="st5" cx="139.51" cy="183.63" r="9.55"/>
+  </g>
+  <g id="Ab7" class="st20">
+    <path class="st7" d="M21.25,231.77V102.79h118.77v128.98H21.25ZM22.53,104.07v126.43h116.21v-126.43H22.53Z"/>
+    <rect class="st7" x="44.75" y="103.3" width="1.28" height="127.7"/>
+    <rect class="st7" x="68.5" y="103.3" width="1.28" height="127.7"/>
+    <rect class="st7" x="92" y="103.3" width="1.28" height="127.7"/>
+    <rect class="st7" x="115.24" y="103.3" width="1.28" height="127.7"/>
+    <rect class="st7" x="22.02" y="134.71" width="117.49" height="1.28"/>
+    <rect class="st7" x="22.02" y="102.79" width="117.49" height="1.28"/>
+    <rect class="st7" x="22.02" y="166.64" width="117.49" height="1.28"/>
+    <rect class="st7" x="22.02" y="198.57" width="117.49" height="1.28"/>
+    <rect class="st7" x="22.02" y="230.49" width="117.49" height="1.28"/>
+    <rect class="st8" x="14.36" y="88.77" width="134.1" height="15.3"/>
+    <g class="st15">
+      <g class="st15">
+        <text class="st9" transform="translate(46.65 59.08)"><tspan x="0" y="0">Ab7</tspan></text>
+      </g>
+    </g>
+    <g>
+      <rect class="st8" x="19.29" y="67.62" width="4.35" height="20.14" transform="translate(-48.65 37.93) rotate(-45)"/>
+      <rect class="st8" x="11.39" y="75.51" width="20.14" height="4.35" transform="translate(-48.65 37.93) rotate(-45)"/>
+    </g>
+    <path class="st6" d="M138.74,161.96c-5.27,0-9.55-4.28-9.55-9.55s4.28-9.55,9.55-9.55,9.55,4.28,9.55,9.55-4.28,9.55-9.55,9.55Z"/>
+    <circle class="st5" cx="92.28" cy="120.32" r="9.55"/>
+    <circle class="st4" cx="116.24" cy="120.32" r="9.55"/>
+    <circle class="st3" cx="69.4" cy="120.32" r="9.55"/>
+    <g>
+      <rect class="st8" x="43.1" y="67.62" width="4.35" height="20.14" transform="translate(-41.67 54.77) rotate(-45)"/>
+      <rect class="st8" x="35.19" y="75.51" width="20.14" height="4.35" transform="translate(-41.68 54.76) rotate(-45)"/>
+    </g>
+  </g>
+  <g id="Abm" class="st20">
+    <g id="pattern4" data-name="pattern">
+      <path class="st7" d="M21.25,225.77V96.79h118.77v128.98H21.25ZM22.53,98.07v126.43h116.21v-126.43H22.53Z"/>
+      <rect class="st7" x="44.75" y="97.3" width="1.28" height="127.7"/>
+      <rect class="st7" x="68.5" y="97.3" width="1.28" height="127.7"/>
+      <rect class="st7" x="92" y="97.3" width="1.28" height="127.7"/>
+      <rect class="st7" x="115.24" y="97.3" width="1.28" height="127.7"/>
+      <rect class="st7" x="22.02" y="128.71" width="117.49" height="1.28"/>
+      <rect class="st7" x="22.02" y="96.79" width="117.49" height="1.28"/>
+      <rect class="st7" x="22.02" y="160.64" width="117.49" height="1.28"/>
+      <rect class="st7" x="22.02" y="192.57" width="117.49" height="1.28"/>
+      <rect class="st7" x="22.02" y="224.49" width="117.49" height="1.28"/>
+      <g class="st15">
+        <g class="st15">
+          <text class="st9" transform="translate(37.65 58.08)"><tspan x="0" y="0">Abm</tspan></text>
+        </g>
+      </g>
+      <circle class="st3" cx="45.78" cy="177.68" r="9.55"/>
+      <circle class="st4" cx="93.24" cy="114.32" r="9.55"/>
+      <circle class="st5" cx="69.28" cy="177.68" r="9.55"/>
+      <circle class="st5" cx="21.75" cy="113.82" r="9.55"/>
+      <g class="st15">
+        <g class="st15">
+          <text class="st10" transform="translate(2 105.12)"><tspan x="0" y="0">4</tspan></text>
+        </g>
+      </g>
+      <circle class="st3" cx="116.51" cy="113.82" r="9.55"/>
+      <circle class="st5" cx="139.75" cy="113.82" r="9.55"/>
+    </g>
+  </g>
+  <g id="Ab" class="st20">
+    <g id="pattern5" data-name="pattern">
+      <path class="st7" d="M21.25,225.77V96.79h118.77v128.98H21.25ZM22.53,98.07v126.43h116.21v-126.43H22.53Z"/>
+      <rect class="st7" x="44.75" y="97.3" width="1.28" height="127.7"/>
+      <rect class="st7" x="68.5" y="97.3" width="1.28" height="127.7"/>
+      <rect class="st7" x="92" y="97.3" width="1.28" height="127.7"/>
+      <rect class="st7" x="115.24" y="97.3" width="1.28" height="127.7"/>
+      <rect class="st7" x="22.02" y="128.71" width="117.49" height="1.28"/>
+      <rect class="st7" x="22.02" y="96.79" width="117.49" height="1.28"/>
+      <rect class="st7" x="22.02" y="160.64" width="117.49" height="1.28"/>
+      <rect class="st7" x="22.02" y="192.57" width="117.49" height="1.28"/>
+      <rect class="st7" x="22.02" y="224.49" width="117.49" height="1.28"/>
+      <g class="st15">
+        <g class="st15">
+          <text class="st9" transform="translate(57.65 58.08)"><tspan x="0" y="0">Ab</tspan></text>
+        </g>
+      </g>
+      <circle class="st3" cx="45.78" cy="177.68" r="9.55"/>
+      <circle class="st4" cx="93.24" cy="145.32" r="9.55"/>
+      <circle class="st5" cx="69.28" cy="177.68" r="9.55"/>
+      <circle class="st5" cx="21.75" cy="113.82" r="9.55"/>
+      <g class="st15">
+        <g class="st15">
+          <text class="st10" transform="translate(2 105.12)"><tspan x="0" y="0">4</tspan></text>
+        </g>
+      </g>
+      <circle class="st3" cx="116.51" cy="113.82" r="9.55"/>
+      <circle class="st5" cx="139.75" cy="113.82" r="9.55"/>
+    </g>
+  </g>
+  <g id="A7" class="st20">
+    <path class="st7" d="M21.25,231.77V102.79h118.77v128.98H21.25ZM22.53,104.07v126.43h116.21v-126.43H22.53Z"/>
+    <rect class="st7" x="44.75" y="103.3" width="1.28" height="127.7"/>
+    <rect class="st7" x="68.5" y="103.3" width="1.28" height="127.7"/>
+    <rect class="st7" x="92" y="103.3" width="1.28" height="127.7"/>
+    <rect class="st7" x="115.24" y="103.3" width="1.28" height="127.7"/>
+    <rect class="st7" x="22.02" y="134.71" width="117.49" height="1.28"/>
+    <rect class="st7" x="22.02" y="102.79" width="117.49" height="1.28"/>
+    <rect class="st7" x="22.02" y="166.64" width="117.49" height="1.28"/>
+    <rect class="st7" x="22.02" y="198.57" width="117.49" height="1.28"/>
+    <rect class="st7" x="22.02" y="230.49" width="117.49" height="1.28"/>
+    <rect class="st8" x="14.36" y="88.77" width="134.1" height="15.3"/>
+    <g class="st15">
+      <g class="st15">
+        <text class="st9" transform="translate(58.65 59.08)"><tspan x="0" y="0">A7</tspan></text>
+      </g>
+    </g>
+    <g>
+      <rect class="st8" x="19.29" y="67.62" width="4.35" height="20.14" transform="translate(-48.65 37.93) rotate(-45)"/>
+      <rect class="st8" x="11.39" y="75.51" width="20.14" height="4.35" transform="translate(-48.65 37.93) rotate(-45)"/>
+    </g>
+    <path class="st6" d="M138.74,192.96c-5.27,0-9.55-4.28-9.55-9.55s4.28-9.55,9.55-9.55,9.55,4.28,9.55,9.55-4.28,9.55-9.55,9.55Z"/>
+    <circle class="st5" cx="92.28" cy="151.32" r="9.55"/>
+    <circle class="st4" cx="116.24" cy="151.32" r="9.55"/>
+    <circle class="st3" cx="69.4" cy="151.32" r="9.55"/>
+    <g>
+      <rect class="st8" x="43.1" y="67.62" width="4.35" height="20.14" transform="translate(-41.67 54.77) rotate(-45)"/>
+      <rect class="st8" x="35.19" y="75.51" width="20.14" height="4.35" transform="translate(-41.68 54.76) rotate(-45)"/>
+    </g>
+  </g>
+  <g id="Am" class="st20">
+    <path class="st7" d="M21.25,231.77V102.79h118.77v128.98H21.25ZM22.53,104.07v126.43h116.21v-126.43H22.53Z"/>
+    <rect class="st7" x="44.75" y="103.3" width="1.28" height="127.7"/>
+    <rect class="st7" x="68.5" y="103.3" width="1.28" height="127.7"/>
+    <rect class="st7" x="92" y="103.3" width="1.28" height="127.7"/>
+    <rect class="st7" x="115.24" y="103.3" width="1.28" height="127.7"/>
+    <rect class="st7" x="22.02" y="134.71" width="117.49" height="1.28"/>
+    <rect class="st7" x="22.02" y="102.79" width="117.49" height="1.28"/>
+    <rect class="st7" x="22.02" y="166.64" width="117.49" height="1.28"/>
+    <rect class="st7" x="22.02" y="198.57" width="117.49" height="1.28"/>
+    <rect class="st7" x="22.02" y="230.49" width="117.49" height="1.28"/>
+    <rect class="st8" x="14.36" y="88.77" width="134.1" height="15.3"/>
+    <g class="st15">
+      <g class="st15">
+        <text class="st9" transform="translate(47.65 59.08)"><tspan x="0" y="0">Am</tspan></text>
+      </g>
+    </g>
+    <circle class="st3" cx="138.74" cy="75.82" r="9.55"/>
+    <circle class="st4" cx="115.88" cy="120.51" r="9.55"/>
+    <circle class="st5" cx="92.64" cy="150.32" r="9.55"/>
+    <circle class="st5" cx="44.75" cy="75.82" r="9.55"/>
+    <circle class="st3" cx="68.89" cy="150.37" r="9.55"/>
+    <circle class="st3" cx="20.74" cy="75.82" r="9.55"/>
+  </g>
+  <g id="A" class="st20">
+    <path class="st7" d="M21.25,231.77V102.79h118.77v128.98H21.25ZM22.53,104.07v126.43h116.21v-126.43H22.53Z"/>
+    <rect class="st7" x="44.75" y="103.3" width="1.28" height="127.7"/>
+    <rect class="st7" x="68.5" y="103.3" width="1.28" height="127.7"/>
+    <rect class="st7" x="92" y="103.3" width="1.28" height="127.7"/>
+    <rect class="st7" x="115.24" y="103.3" width="1.28" height="127.7"/>
+    <rect class="st7" x="22.02" y="134.71" width="117.49" height="1.28"/>
+    <rect class="st7" x="22.02" y="102.79" width="117.49" height="1.28"/>
+    <rect class="st7" x="22.02" y="166.64" width="117.49" height="1.28"/>
+    <rect class="st7" x="22.02" y="198.57" width="117.49" height="1.28"/>
+    <rect class="st7" x="22.02" y="230.49" width="117.49" height="1.28"/>
+    <rect class="st8" x="14.36" y="88.77" width="134.1" height="15.3"/>
+    <g class="st15">
+      <g class="st15">
+        <text class="st9" transform="translate(67.65 59.08)"><tspan x="0" y="0">A</tspan></text>
+      </g>
+    </g>
+    <rect class="st8" x="19.29" y="67.62" width="4.35" height="20.14" transform="translate(-48.65 37.93) rotate(-45)"/>
+    <rect class="st8" x="11.39" y="75.51" width="20.14" height="4.35" transform="translate(-48.65 37.93) rotate(-45)"/>
+    <circle class="st3" cx="138.74" cy="77.82" r="9.55"/>
+    <circle class="st5" cx="92.28" cy="151.32" r="9.55"/>
+    <circle class="st4" cx="116.24" cy="151.32" r="9.55"/>
+    <circle class="st5" cx="45.75" cy="77.82" r="9.55"/>
+    <circle class="st3" cx="69.4" cy="151.32" r="9.55"/>
+  </g>
+  <g id="Bb7" class="st20">
+    <path class="st7" d="M21.25,231.77V102.79h118.77v128.98H21.25ZM22.53,104.07v126.43h116.21v-126.43H22.53Z"/>
+    <rect class="st7" x="44.75" y="103.3" width="1.28" height="127.7"/>
+    <rect class="st7" x="68.5" y="103.3" width="1.28" height="127.7"/>
+    <rect class="st7" x="92" y="103.3" width="1.28" height="127.7"/>
+    <rect class="st7" x="115.24" y="103.3" width="1.28" height="127.7"/>
+    <rect class="st7" x="22.02" y="134.71" width="117.49" height="1.28"/>
+    <rect class="st7" x="22.02" y="102.79" width="117.49" height="1.28"/>
+    <rect class="st7" x="22.02" y="166.64" width="117.49" height="1.28"/>
+    <rect class="st7" x="22.02" y="198.57" width="117.49" height="1.28"/>
+    <rect class="st7" x="22.02" y="230.49" width="117.49" height="1.28"/>
+    <rect class="st8" x="14.36" y="88.77" width="134.1" height="15.3"/>
+    <g class="st15">
+      <g class="st15">
+        <text class="st9" transform="translate(46.65 59.08)"><tspan x="0" y="0">Bb7</tspan></text>
+      </g>
+    </g>
+    <g>
+      <rect class="st8" x="19.29" y="67.62" width="4.35" height="20.14" transform="translate(-48.65 37.93) rotate(-45)"/>
+      <rect class="st8" x="11.39" y="75.51" width="20.14" height="4.35" transform="translate(-48.65 37.93) rotate(-45)"/>
+    </g>
+    <path class="st6" d="M138.74,224.96c-5.27,0-9.55-4.28-9.55-9.55s4.28-9.55,9.55-9.55,9.55,4.28,9.55,9.55-4.28,9.55-9.55,9.55Z"/>
+    <circle class="st5" cx="92.28" cy="183.32" r="9.55"/>
+    <circle class="st4" cx="116.24" cy="183.32" r="9.55"/>
+    <circle class="st3" cx="69.4" cy="183.32" r="9.55"/>
+    <g>
+      <rect class="st8" x="43.1" y="67.62" width="4.35" height="20.14" transform="translate(-41.67 54.77) rotate(-45)"/>
+      <rect class="st8" x="35.19" y="75.51" width="20.14" height="4.35" transform="translate(-41.68 54.76) rotate(-45)"/>
+    </g>
+  </g>
+  <g id="Bbm" class="st20">
+    <path class="st7" d="M21.25,231.77V102.79h118.77v128.98H21.25ZM22.53,104.07v126.43h116.21v-126.43H22.53Z"/>
+    <rect class="st7" x="44.75" y="103.3" width="1.28" height="127.7"/>
+    <rect class="st7" x="68.5" y="103.3" width="1.28" height="127.7"/>
+    <rect class="st7" x="92" y="103.3" width="1.28" height="127.7"/>
+    <rect class="st7" x="115.24" y="103.3" width="1.28" height="127.7"/>
+    <rect class="st7" x="22.02" y="134.71" width="117.49" height="1.28"/>
+    <rect class="st7" x="22.02" y="102.79" width="117.49" height="1.28"/>
+    <rect class="st7" x="22.02" y="166.64" width="117.49" height="1.28"/>
+    <rect class="st7" x="22.02" y="198.57" width="117.49" height="1.28"/>
+    <rect class="st7" x="22.02" y="230.49" width="117.49" height="1.28"/>
+    <rect class="st8" x="14.36" y="88.77" width="134.1" height="15.3"/>
+    <g class="st15">
+      <g class="st15">
+        <text class="st9" transform="translate(39.65 59.08)"><tspan x="0" y="0">Bbm</tspan></text>
+      </g>
+    </g>
+    <rect class="st8" x="19.29" y="67.62" width="4.35" height="20.14" transform="translate(-48.65 37.93) rotate(-45)"/>
+    <rect class="st8" x="11.39" y="75.51" width="20.14" height="4.35" transform="translate(-48.65 37.93) rotate(-45)"/>
+    <circle class="st3" cx="138.74" cy="118.82" r="9.55"/>
+    <circle class="st4" cx="115.88" cy="153.51" r="9.55"/>
+    <circle class="st5" cx="92.64" cy="183.32" r="9.55"/>
+    <circle class="st5" cx="44.75" cy="119.82" r="9.55"/>
+    <circle class="st3" cx="68.89" cy="183.37" r="9.55"/>
+  </g>
+  <g id="Bb" class="st20">
+    <path class="st7" d="M21.25,231.77V102.79h118.77v128.98H21.25ZM22.53,104.07v126.43h116.21v-126.43H22.53Z"/>
+    <rect class="st7" x="44.75" y="103.3" width="1.28" height="127.7"/>
+    <rect class="st7" x="68.5" y="103.3" width="1.28" height="127.7"/>
+    <rect class="st7" x="92" y="103.3" width="1.28" height="127.7"/>
+    <rect class="st7" x="115.24" y="103.3" width="1.28" height="127.7"/>
+    <rect class="st7" x="22.02" y="134.71" width="117.49" height="1.28"/>
+    <rect class="st7" x="22.02" y="102.79" width="117.49" height="1.28"/>
+    <rect class="st7" x="22.02" y="166.64" width="117.49" height="1.28"/>
+    <rect class="st7" x="22.02" y="198.57" width="117.49" height="1.28"/>
+    <rect class="st7" x="22.02" y="230.49" width="117.49" height="1.28"/>
+    <rect class="st8" x="14.36" y="88.77" width="134.1" height="15.3"/>
+    <g class="st15">
+      <g class="st15">
+        <text class="st9" transform="translate(54.65 59.08)"><tspan x="0" y="0">Bb</tspan></text>
+      </g>
+    </g>
+    <rect class="st8" x="19.29" y="67.62" width="4.35" height="20.14" transform="translate(-48.65 37.93) rotate(-45)"/>
+    <rect class="st8" x="11.39" y="75.51" width="20.14" height="4.35" transform="translate(-48.65 37.93) rotate(-45)"/>
+    <circle class="st3" cx="138.74" cy="119.82" r="9.55"/>
+    <circle class="st5" cx="92.28" cy="183.32" r="9.55"/>
+    <circle class="st4" cx="116.24" cy="183.32" r="9.55"/>
+    <circle class="st5" cx="45.75" cy="119.82" r="9.55"/>
+    <circle class="st3" cx="69.4" cy="183.32" r="9.55"/>
+  </g>
+  <g id="B7" class="st20">
+    <g class="st20">
+      <g>
+        <g>
+          <g>
+            <polygon class="st22" points="121.43 47.49 122.43 219.09 51.53 219.09 52.63 47.49 121.43 47.49"/>
+            <g>
+              <rect class="st23" x="52.33" y="94.59" width="69.4" height="4.1"/>
+              <path class="st0" d="M54.33,96.59h0c0,1.1-.9,2-2,2h0v-4.1h0c1.1,0,2,.9,2,2v.1Z"/>
+              <path class="st0" d="M119.63,96.59h0c0-1.1.9-2,2-2h0v4.1h0c-1.1,0-2-.9-2-2v-.1Z"/>
+            </g>
+            <g>
+              <rect class="st11" x="52.83" y="47.39" width="68.5" height="4.1"/>
+              <path class="st0" d="M54.73,49.39h0c0,1.2-.9,2.1-2,2.1h0v-4.1h0c1.1,0,2,.9,2,2Z"/>
+              <path class="st0" d="M119.23,49.39h0c0-1.2.9-2.1,2-2.1h0v4.1h0c-1.1,0-2-.9-2-2Z"/>
+            </g>
+            <path class="st1" d="M52.33,58.79v-10.7c0-.5.4-.9.9-.9h67.6c.5,0,.9.4.9.9v10.7H52.33Z"/>
+            <g>
+              <rect class="st19" x="51.93" y="133.19" width="70.1" height="4.1"/>
+              <path class="st0" d="M54.03,135.29h0c0,1.1-.9,2-2,2h0v-4.1h0c1.1,0,2,.9,2,2v.1Z"/>
+              <path class="st0" d="M120.03,135.29h0c0-1.1.9-2,2-2h0v4.1h0c-1.1,0-2-.9-2-2v-.1Z"/>
+            </g>
+            <g>
+              <rect class="st17" x="51.63" y="170.99" width="70.8" height="4.1"/>
+              <path class="st0" d="M53.63,173.09h0c0,1.1-.9,2-2,2h0v-4.1h0c1.1,0,2,.9,2,2v.1Z"/>
+              <path class="st0" d="M120.33,173.09h0c0-1.1.9-2,2-2h0v4.1h0c-1.1,0-2-.9-2-2v-.1Z"/>
+            </g>
+            <g>
+              <rect class="st18" x="51.23" y="208.59" width="71.5" height="4.1"/>
+              <path class="st0" d="M53.33,210.59h0c0,1.1-.9,2-2,2h0v-4.1h0c1.1,0,2,.9,2,2v.1Z"/>
+              <path class="st0" d="M120.73,210.59h0c0-1.1.9-2,2-2h0v4.1h0c-1.1,0-2-.9-2-2v-.1Z"/>
+            </g>
+            <g>
+              <rect class="st21" x="54.33" y="47.29" width="3.2" height="171.8"/>
+              <rect class="st16" x="118.13" y="47.29" width="1.1" height="171.8"/>
+              <rect class="st13" x="105.33" y="47.19" width="1.5" height="171.8"/>
+              <rect class="st12" x="92.63" y="47.29" width="1.9" height="171.8"/>
+              <rect class="st2" x="79.83" y="47.29" width="2.3" height="171.8"/>
+              <rect class="st14" x="67.03" y="47.19" width="2.7" height="171.8"/>
+            </g>
+          </g>
+          <g>
+            <path class="st0" d="M74.03,114.89c0,3-2.4,5.5-5.5,5.5s-5.5-2.4-5.5-5.5,2.4-5.5,5.5-5.5,5.5,2.4,5.5,5.5Z"/>
+            <path class="st0" d="M99.23,114.89c0,3-2.4,5.5-5.5,5.5s-5.5-2.4-5.5-5.5,2.4-5.5,5.5-5.5,5.5,2.4,5.5,5.5Z"/>
+            <path class="st0" d="M124.43,114.89c0,3-2.4,5.5-5.5,5.5s-5.5-2.4-5.5-5.5,2.4-5.5,5.5-5.5,5.5,2.4,5.5,5.5Z"/>
+          </g>
+          <g>
+            <path class="st0" d="M86.63,191.99c0,3-2.4,5.5-5.5,5.5s-5.5-2.4-5.5-5.5,2.4-5.5,5.5-5.5,5.5,2.4,5.5,5.5Z"/>
+            <path class="st0" d="M111.83,191.99c0,3-2.4,5.5-5.5,5.5s-5.5-2.4-5.5-5.5,2.4-5.5,5.5-5.5,5.5,2.4,5.5,5.5Z"/>
+          </g>
+        </g>
+        <g>
+          <path class="st8" d="M72.43,10.49h8.6c2.4,0,4,.7,5,2.1.6.8.9,1.8.9,2.9s-.4,2.3-1.1,3.1c-.4.4-.9.8-1.6,1.2,1,.4,1.8.8,2.3,1.3.9.9,1.4,2.1,1.4,3.6s-.4,2.5-1.2,3.5c-1.2,1.6-3.1,2.4-5.8,2.4h-8.5s0-20.1,0-20.1ZM80.03,18.89c1.1,0,2-.2,2.7-.5,1-.5,1.5-1.4,1.5-2.7s-.5-2.2-1.6-2.7c-.6-.3-1.5-.4-2.7-.4h-4.9v6.2h4.9s.1.1.1.1ZM80.93,28.19c1.7,0,2.9-.5,3.6-1.4.4-.6.7-1.3.7-2.2,0-1.5-.7-2.5-2-3-.7-.3-1.6-.4-2.7-.4h-5.4v7.1h5.9l-.1-.1Z"/>
+          <path class="st8" d="M103.63,11.29v2.1c-.6.6-1.5,1.7-2.5,3.2-1,1.5-2,3.1-2.8,4.9-.8,1.7-1.4,3.3-1.8,4.7-.3.9-.6,2.4-1,4.4h-2.7c.6-3.7,2-7.5,4.1-11.2,1.2-2.2,2.6-4,3.9-5.6h-10.8v-2.5s13.6,0,13.6,0Z"/>
+        </g>
+      </g>
+      <g>
+        <path class="st8" d="M52.93,43.19c-.2,0-.4,0-.6-.2-.3-.3-.3-.8,0-1.1l5-5c.3-.3.8-.3,1.1,0s.3.8,0,1.1l-5,5c-.2.2-.4.2-.6.2h.1Z"/>
+        <path class="st8" d="M57.93,43.19c-.2,0-.4,0-.6-.2l-5-5c-.3-.3-.3-.8,0-1.1s.8-.3,1.1,0l5,5c.3.3.3.8,0,1.1-.2.2-.4.2-.6.2h.1Z"/>
+      </g>
+    </g>
+    <path class="st7" d="M21.25,231.77V102.79h118.77v128.98H21.25ZM22.53,104.07v126.43h116.21v-126.43H22.53Z"/>
+    <rect class="st7" x="44.75" y="103.3" width="1.28" height="127.7"/>
+    <rect class="st7" x="68.5" y="103.3" width="1.28" height="127.7"/>
+    <rect class="st7" x="92" y="103.3" width="1.28" height="127.7"/>
+    <rect class="st7" x="115.24" y="103.3" width="1.28" height="127.7"/>
+    <rect class="st7" x="22.02" y="134.71" width="117.49" height="1.28"/>
+    <rect class="st7" x="22.02" y="102.79" width="117.49" height="1.28"/>
+    <rect class="st7" x="22.02" y="166.64" width="117.49" height="1.28"/>
+    <rect class="st7" x="22.02" y="198.57" width="117.49" height="1.28"/>
+    <rect class="st7" x="22.02" y="230.49" width="117.49" height="1.28"/>
+    <rect class="st8" x="14.36" y="88.77" width="134.1" height="15.3"/>
+    <g class="st15">
+      <g class="st15">
+        <text class="st9" transform="translate(60.65 60.08)"><tspan x="0" y="0">B7</tspan></text>
+      </g>
+    </g>
+    <rect class="st8" x="19.29" y="67.62" width="4.35" height="20.14" transform="translate(-48.65 37.93) rotate(-45)"/>
+    <rect class="st8" x="11.39" y="75.51" width="20.14" height="4.35" transform="translate(-48.65 37.93) rotate(-45)"/>
+    <circle class="st3" cx="138.74" cy="150.82" r="9.55"/>
+    <path class="st6" d="M92,161.37c-5.27,0-9.55-4.28-9.55-9.55s4.28-9.55,9.55-9.55,9.55,4.28,9.55,9.55-4.28,9.55-9.55,9.55Z"/>
+    <circle class="st4" cx="68.5" cy="120.38" r="9.55"/>
+    <circle class="st5" cx="45.75" cy="151.82" r="9.55"/>
+    <circle class="st5" cx="115.95" cy="77.24" r="9.55"/>
+  </g>
+  <g id="Bm" class="st20">
+    <path class="st7" d="M21.25,231.77V102.79h118.77v128.98H21.25ZM22.53,104.07v126.43h116.21v-126.43H22.53Z"/>
+    <rect class="st7" x="44.75" y="103.3" width="1.28" height="127.7"/>
+    <rect class="st7" x="68.5" y="103.3" width="1.28" height="127.7"/>
+    <rect class="st7" x="92" y="103.3" width="1.28" height="127.7"/>
+    <rect class="st7" x="115.24" y="103.3" width="1.28" height="127.7"/>
+    <rect class="st7" x="22.02" y="134.71" width="117.49" height="1.28"/>
+    <rect class="st7" x="22.02" y="102.79" width="117.49" height="1.28"/>
+    <rect class="st7" x="22.02" y="166.64" width="117.49" height="1.28"/>
+    <rect class="st7" x="22.02" y="198.57" width="117.49" height="1.28"/>
+    <rect class="st7" x="22.02" y="230.49" width="117.49" height="1.28"/>
+    <rect class="st8" x="14.36" y="88.77" width="134.1" height="15.3"/>
+    <g class="st15">
+      <g class="st15">
+        <text class="st9" transform="translate(47.65 59.08)"><tspan x="0" y="0">Bm</tspan></text>
+      </g>
+    </g>
+    <rect class="st8" x="19.29" y="67.62" width="4.35" height="20.14" transform="translate(-48.65 37.93) rotate(-45)"/>
+    <rect class="st8" x="11.39" y="75.51" width="20.14" height="4.35" transform="translate(-48.65 37.93) rotate(-45)"/>
+    <circle class="st3" cx="138.74" cy="149.82" r="9.55"/>
+    <circle class="st4" cx="115.88" cy="184.51" r="9.55"/>
+    <circle class="st5" cx="92.64" cy="214.32" r="9.55"/>
+    <circle class="st5" cx="44.75" cy="150.82" r="9.55"/>
+    <circle class="st3" cx="68.89" cy="214.37" r="9.55"/>
+  </g>
+  <g id="B" class="st20">
+    <path class="st7" d="M21.25,231.77V102.79h118.77v128.98H21.25ZM22.53,104.07v126.43h116.21v-126.43H22.53Z"/>
+    <rect class="st7" x="44.75" y="103.3" width="1.28" height="127.7"/>
+    <rect class="st7" x="68.5" y="103.3" width="1.28" height="127.7"/>
+    <rect class="st7" x="92" y="103.3" width="1.28" height="127.7"/>
+    <rect class="st7" x="115.24" y="103.3" width="1.28" height="127.7"/>
+    <rect class="st7" x="22.02" y="134.71" width="117.49" height="1.28"/>
+    <rect class="st7" x="22.02" y="102.79" width="117.49" height="1.28"/>
+    <rect class="st7" x="22.02" y="166.64" width="117.49" height="1.28"/>
+    <rect class="st7" x="22.02" y="198.57" width="117.49" height="1.28"/>
+    <rect class="st7" x="22.02" y="230.49" width="117.49" height="1.28"/>
+    <rect class="st8" x="14.36" y="88.77" width="134.1" height="15.3"/>
+    <g class="st15">
+      <g class="st15">
+        <text class="st9" transform="translate(66.65 59.08)"><tspan x="0" y="0">B</tspan></text>
+      </g>
+    </g>
+    <rect class="st8" x="19.29" y="67.62" width="4.35" height="20.14" transform="translate(-48.65 37.93) rotate(-45)"/>
+    <rect class="st8" x="11.39" y="75.51" width="20.14" height="4.35" transform="translate(-48.65 37.93) rotate(-45)"/>
+    <circle class="st3" cx="138.74" cy="151.82" r="9.55"/>
+    <circle class="st5" cx="92.28" cy="215.32" r="9.55"/>
+    <circle class="st4" cx="116.24" cy="215.32" r="9.55"/>
+    <circle class="st5" cx="45.75" cy="151.82" r="9.55"/>
+    <circle class="st3" cx="69.4" cy="215.32" r="9.55"/>
+  </g>
+  <g id="C7" class="st20">
+    <path class="st7" d="M21.25,231.77V102.79h118.77v128.98H21.25ZM22.53,104.07v126.43h116.21v-126.43H22.53Z"/>
+    <rect class="st7" x="44.75" y="103.3" width="1.28" height="127.7"/>
+    <rect class="st7" x="68.5" y="103.3" width="1.28" height="127.7"/>
+    <rect class="st7" x="92" y="103.3" width="1.28" height="127.7"/>
+    <rect class="st7" x="115.24" y="103.3" width="1.28" height="127.7"/>
+    <rect class="st7" x="22.02" y="134.71" width="117.49" height="1.28"/>
+    <rect class="st7" x="22.02" y="102.79" width="117.49" height="1.28"/>
+    <rect class="st7" x="22.02" y="166.64" width="117.49" height="1.28"/>
+    <rect class="st7" x="22.02" y="198.57" width="117.49" height="1.28"/>
+    <rect class="st7" x="22.02" y="230.49" width="117.49" height="1.28"/>
+    <rect class="st8" x="14.36" y="88.77" width="134.1" height="15.3"/>
+    <g class="st15">
+      <g class="st15">
+        <text class="st9" transform="translate(58.15 58.59)"><tspan x="0" y="0">C7</tspan></text>
+      </g>
+    </g>
+    <rect class="st8" x="19.29" y="67.62" width="4.35" height="20.14" transform="translate(-48.65 37.93) rotate(-45)"/>
+    <rect class="st8" x="11.39" y="75.51" width="20.14" height="4.35" transform="translate(-48.65 37.93) rotate(-45)"/>
+    <circle class="st3" cx="22.02" cy="183.82" r="9.55"/>
+    <circle class="st4" cx="139.51" cy="77.68" r="9.55"/>
+    <circle class="st5" cx="115.24" cy="120.07" r="9.55"/>
+    <circle class="st4" cx="68.78" cy="151.32" r="9.55"/>
+    <circle class="st5" cx="44.75" cy="183.82" r="9.55"/>
+    <path class="st6" d="M92,193.37c-5.27,0-9.55-4.28-9.55-9.55s4.28-9.55,9.55-9.55,9.55,4.28,9.55,9.55-4.28,9.55-9.55,9.55Z"/>
+  </g>
+  <g id="Cm" class="st20">
+    <g id="pattern6" data-name="pattern">
+      <path class="st7" d="M21.25,225.77V96.79h118.77v128.98H21.25ZM22.53,98.07v126.43h116.21v-126.43H22.53Z"/>
+      <rect class="st7" x="44.75" y="97.3" width="1.28" height="127.7"/>
+      <rect class="st7" x="68.5" y="97.3" width="1.28" height="127.7"/>
+      <rect class="st7" x="92" y="97.3" width="1.28" height="127.7"/>
+      <rect class="st7" x="115.24" y="97.3" width="1.28" height="127.7"/>
+      <rect class="st7" x="22.02" y="128.71" width="117.49" height="1.28"/>
+      <rect class="st7" x="22.02" y="96.79" width="117.49" height="1.28"/>
+      <rect class="st7" x="22.02" y="160.64" width="117.49" height="1.28"/>
+      <rect class="st7" x="22.02" y="192.57" width="117.49" height="1.28"/>
+      <rect class="st7" x="22.02" y="224.49" width="117.49" height="1.28"/>
+      <g class="st15">
+        <g class="st15">
+          <text class="st9" transform="translate(50.65 58.08)"><tspan x="0" y="0">Cm</tspan></text>
+        </g>
+      </g>
+      <rect class="st8" x="19.29" y="67.62" width="4.35" height="20.14" transform="translate(-48.65 37.93) rotate(-45)"/>
+      <rect class="st8" x="11.39" y="75.51" width="20.14" height="4.35" transform="translate(-48.65 37.93) rotate(-45)"/>
+      <circle class="st3" cx="68.78" cy="177.68" r="9.55"/>
+      <circle class="st4" cx="116.24" cy="145.32" r="9.55"/>
+      <circle class="st5" cx="92.28" cy="177.68" r="9.55"/>
+      <circle class="st5" cx="44.75" cy="113.82" r="9.55"/>
+      <g class="st15">
+        <g class="st15">
+          <text class="st10" transform="translate(2 105.12)"><tspan x="0" y="0">3</tspan></text>
+        </g>
+      </g>
+      <circle class="st3" cx="139.51" cy="113.82" r="9.55"/>
+    </g>
+  </g>
+  <g id="C">
+    <path class="st7" d="M21.25,231.77V102.79h118.77v128.98H21.25ZM22.53,104.07v126.43h116.21v-126.43H22.53Z"/>
+    <rect class="st7" x="44.75" y="103.3" width="1.28" height="127.7"/>
+    <rect class="st7" x="68.5" y="103.3" width="1.28" height="127.7"/>
+    <rect class="st7" x="92" y="103.3" width="1.28" height="127.7"/>
+    <rect class="st7" x="115.24" y="103.3" width="1.28" height="127.7"/>
+    <rect class="st7" x="22.02" y="134.71" width="117.49" height="1.28"/>
+    <rect class="st7" x="22.02" y="102.79" width="117.49" height="1.28"/>
+    <rect class="st7" x="22.02" y="166.64" width="117.49" height="1.28"/>
+    <rect class="st7" x="22.02" y="198.57" width="117.49" height="1.28"/>
+    <rect class="st7" x="22.02" y="230.49" width="117.49" height="1.28"/>
+    <rect class="st8" x="14.36" y="88.77" width="134.1" height="15.3"/>
+    <g class="st15">
+      <g class="st15">
+        <text class="st9" transform="translate(66.65 59.08)"><tspan x="0" y="0">C</tspan></text>
+      </g>
+    </g>
+    <rect class="st8" x="19.29" y="67.62" width="4.35" height="20.14" transform="translate(-48.65 37.93) rotate(-45)"/>
+    <rect class="st8" x="11.39" y="75.51" width="20.14" height="4.35" transform="translate(-48.65 37.93) rotate(-45)"/>
+    <circle class="st3" cx="91.46" cy="77.68" r="9.55"/>
+    <circle class="st4" cx="139.51" cy="77.68" r="9.55"/>
+    <circle class="st5" cx="115.24" cy="120.07" r="9.55"/>
+    <circle class="st4" cx="68.78" cy="151.32" r="9.55"/>
+    <circle class="st5" cx="44.75" cy="183.82" r="9.55"/>
+  </g>
+</svg>

@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Music · Tribe of Abraham</title>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="theme-color" content="#000000">
+<!-- Fonts loaded locally or fallback to system -->
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background: #000;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  height: 100vh;
+  width: 100vw;
+  font-family: 'DM Sans', system-ui, sans-serif;
+}
+
+/* ── FULL-SCREEN IFRAMES ── */
+.app-frame {
+  position: absolute;
+  border: none;
+  display: block;
+  transition: top 0.4s ease, left 0.4s ease, width 0.4s ease, height 0.4s ease, opacity 0.4s ease, border-radius 0.4s ease;
+}
+.app-frame.front {
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  opacity: 1;
+  border-radius: 0;
+}
+.app-frame.behind {
+  z-index: 1;
+  opacity: 0;
+  pointer-events: none;
+  border-radius: 6px;
+}
+
+/* ── THUMBNAIL BUTTONS IN THE BAR ── */
+.thumb {
+  position: relative;
+  width: clamp(3.5rem, 7vw, 5rem);
+  height: clamp(2.4rem, 4.8vw, 3.4rem);
+  border-radius: 6px;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.3);
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.thumb:hover {
+  border-color: rgba(255,255,255,0.7);
+  box-shadow: 0 0 10px rgba(255,255,255,0.15);
+}
+.thumb iframe {
+  border: none;
+  width: 800%;
+  height: 800%;
+  transform: scale(0.125);
+  transform-origin: top left;
+  pointer-events: none;
+  display: block;
+  opacity: 0.3;
+}
+.thumb-icon {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0,0,0,0.7);
+  color: rgba(255,255,255,0.95);
+  font-size: clamp(0.8rem, 2vw, 1.2rem);
+  transition: background 0.2s;
+}
+.thumb:hover .thumb-icon {
+  background: rgba(0,0,0,0.5);
+  color: white;
+}
+.thumb.active {
+  border-color: white;
+  box-shadow: 0 0 8px rgba(255,255,255,0.2);
+}
+.thumb.active .thumb-icon {
+  background: rgba(0,0,0,0.15);
+}
+
+/* ── FAB GROUP ── */
+.fab-group {
+  position: fixed;
+  bottom: clamp(0.8rem, 2.5vmin, 1.5rem);
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: clamp(0.4rem, 1vmin, 0.7rem);
+  z-index: 1000;
+}
+
+.fab {
+  width: clamp(2.2rem, 4.5vmin, 3.2rem);
+  height: clamp(2.2rem, 4.5vmin, 3.2rem);
+  border-radius: 50%;
+  border: solid 0.12em rgba(255,255,255,0.3);
+  background: rgba(0,0,0,0.7);
+  color: rgba(255,255,255,0.6);
+  font-size: clamp(0.9rem, 2vmin, 1.4rem);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+  backdrop-filter: blur(0.5em);
+  -webkit-backdrop-filter: blur(0.5em);
+}
+.fab:hover {
+  border-color: rgba(255,255,255,0.6);
+  color: white;
+}
+.fab.active {
+  background: rgba(255,255,255,0.15);
+  border-color: white;
+  color: white;
+}
+
+.song-select {
+  height: clamp(2.2rem, 4.5vmin, 3.2rem);
+  border-radius: clamp(1.1rem, 2.25vmin, 1.6rem);
+  border: solid 0.12em rgba(255,255,255,0.3);
+  background: rgba(0,0,0,0.7);
+  color: rgba(255,255,255,0.8);
+  font-family: 'DM Sans', system-ui, sans-serif;
+  font-size: clamp(0.6rem, 1.4vmin, 0.8rem);
+  padding: 0 clamp(0.8rem, 1.5vmin, 1.2rem);
+  cursor: pointer;
+  backdrop-filter: blur(0.5em);
+  -webkit-backdrop-filter: blur(0.5em);
+  outline: none;
+  transition: all 0.2s;
+  -webkit-appearance: none;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='rgba(255,255,255,0.5)'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right clamp(0.5rem, 1vmin, 0.8rem) center;
+  padding-right: clamp(1.6rem, 3vmin, 2.4rem);
+}
+.song-select:hover {
+  border-color: rgba(255,255,255,0.6);
+  color: white;
+}
+.song-select option, .song-select optgroup {
+  background: #1a1a1a;
+  color: #eee;
+}
+</style>
+</head>
+<body>
+
+<!-- Full-screen iframes, stacked -->
+<iframe id="notationFrame" class="app-frame front" src="nashville/index.html" title="Nashville Notation Wheel"></iframe>
+<iframe id="sequencerFrame" class="app-frame behind" src="sequencer/index.html" title="Drum Sequencer"></iframe>
+
+<!-- Bottom bar with thumbnail previews + controls -->
+<div class="fab-group">
+  <div class="thumb active" id="thumbNotation" onclick="showApp('notation')">
+    <iframe src="nashville/index.html" title="Notation preview"></iframe>
+    <div class="thumb-icon">&#9836;</div>
+  </div>
+  <div class="thumb" id="thumbSequencer" onclick="showApp('sequencer')">
+    <iframe src="sequencer/index.html" title="Sequencer preview"></iframe>
+    <div class="thumb-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:1.2em;height:1.2em"><ellipse cx="12" cy="14" rx="9" ry="5"/><path d="M3 14V9a9 5 0 0 1 18 0v5"/><line x1="7" y1="3" x2="12" y2="9"/><line x1="17" y1="3" x2="12" y2="9"/></svg></div>
+  </div>
+  <select id="songSelect" class="song-select" title="Song Presets">
+    <option value="">Song Presets</option>
+    <option value="amazing-grace" selected>Amazing Grace in D — D C G D</option>
+    <optgroup label="Rock">
+      <option value="rock-g">Rock in G — G Bm C D</option>
+      <option value="rock-e">Rock in E — E A B E</option>
+      <option value="rock-a">Rock in A — A D E A</option>
+      <option value="rock-c">Rock in C — C Am F G</option>
+    </optgroup>
+    <optgroup label="Funk">
+      <option value="funk-g">Funk in G — G Bm C D</option>
+      <option value="funk-e">Funk in E — E G A B</option>
+    </optgroup>
+    <optgroup label="Country">
+      <option value="country-g">Country in G — G C D G</option>
+      <option value="country-d">Country in D — D G A D</option>
+      <option value="country-c">Country in C — C F G C</option>
+      <option value="train-a">Train Beat in A — A D E A</option>
+    </optgroup>
+    <optgroup label="Bluegrass">
+      <option value="bluegrass-g">Bluegrass in G — G C D G</option>
+      <option value="bluegrass-a">Bluegrass in A — A D E A</option>
+      <option value="bluegrass-d">Bluegrass in D — D G A D</option>
+      <option value="bgwaltz-g">Bluegrass Waltz in G — G C D</option>
+    </optgroup>
+    <optgroup label="Blues">
+      <option value="blues-e">Blues Shuffle in E — E A B E</option>
+      <option value="blues-a">Blues Shuffle in A — A D E A</option>
+    </optgroup>
+    <optgroup label="Latin">
+      <option value="bossa-am">Bossa Nova in Am — Am Dm G C</option>
+      <option value="samba-g">Samba in G — G C D G</option>
+    </optgroup>
+    <optgroup label="Reggae">
+      <option value="reggae-c">Reggae in C — C G Am F</option>
+      <option value="reggae-g">Reggae in G — G D Em C</option>
+    </optgroup>
+    <optgroup label="World">
+      <option value="afrobeat-e">Afrobeat in E — E A B E</option>
+      <option value="highlife-g">Highlife in G — G C D G</option>
+      <option value="cumbia-a">Cumbia in A — A D E A</option>
+    </optgroup>
+  </select>
+  <button class="fab" id="fabPlay" onclick="toggleSequencerPlay()" title="Play / Pause">
+    <svg id="fabPlayIcon" viewBox="0 0 24 24" fill="currentColor" stroke="none" style="width:50%;height:50%"><polygon points="7,4 21,12 7,20"/></svg>
+    <svg id="fabStopIcon" viewBox="0 0 24 24" fill="currentColor" stroke="none" style="width:50%;height:50%;display:none"><rect x="5" y="5" width="14" height="14"/></svg>
+  </button>
+</div>
+
+<script>
+// Key indices: C=0 Db=1 D=2 Eb=3 E=4 F=5 Gb=6 G=7 Ab=8 A=9 Bb=10 B=11
+// Chords are Nashville numbers 1-7, mods: 0=none, 1=m, 2=7
+var songPresets = {
+  'amazing-grace': { key: 2, chords: [1,7,4,1], mods: [0,3,0,0], beat: 'funk' },
+  'rock-g':      { key: 7,  chords: [1,3,4,5], mods: [0,1,0,0], beat: 'rock-basic' },
+  'rock-e':      { key: 4,  chords: [1,4,5,1], mods: [0,0,0,0], beat: 'rock-basic' },
+  'rock-a':      { key: 9,  chords: [1,4,5,1], mods: [0,0,0,0], beat: 'rock-basic' },
+  'rock-c':      { key: 0,  chords: [1,6,4,5], mods: [0,1,0,0], beat: 'rock-basic' },
+  'funk-g':      { key: 7,  chords: [1,3,4,5], mods: [0,1,0,0], beat: 'funk' },
+  'funk-e':      { key: 4,  chords: [1,3,4,5], mods: [0,1,0,0], beat: 'funk' },
+  'country-g':   { key: 7,  chords: [1,4,5,1], mods: [0,0,0,0], beat: 'country' },
+  'country-d':   { key: 2,  chords: [1,4,5,1], mods: [0,0,0,0], beat: 'country' },
+  'country-c':   { key: 0,  chords: [1,4,5,1], mods: [0,0,0,0], beat: 'country' },
+  'train-a':     { key: 9,  chords: [1,4,5,1], mods: [0,0,0,0], beat: 'country-train' },
+  'bluegrass-g': { key: 7,  chords: [1,4,5,1], mods: [0,0,0,0], beat: 'bluegrass' },
+  'bluegrass-a': { key: 9,  chords: [1,4,5,1], mods: [0,0,0,0], beat: 'bluegrass' },
+  'bluegrass-d': { key: 2,  chords: [1,4,5,1], mods: [0,0,0,0], beat: 'bluegrass' },
+  'bgwaltz-g':   { key: 7,  chords: [1,4,5,1], mods: [0,0,0,0], beat: 'bluegrass-waltz' },
+  'blues-e':     { key: 4,  chords: [1,4,5,1], mods: [2,2,2,2], beat: 'shuffle-blues' },
+  'blues-a':     { key: 9,  chords: [1,4,5,1], mods: [2,2,2,2], beat: 'shuffle-blues' },
+  'bossa-am':    { key: 9,  chords: [1,4,7,3], mods: [1,1,0,0], beat: 'bossa-nova' },
+  'samba-g':     { key: 7,  chords: [1,4,5,1], mods: [0,0,0,0], beat: 'samba' },
+  'reggae-c':    { key: 0,  chords: [1,5,6,4], mods: [0,0,1,0], beat: 'reggae-one-drop' },
+  'reggae-g':    { key: 7,  chords: [1,5,6,4], mods: [0,0,1,0], beat: 'reggae-one-drop' },
+  'afrobeat-e':  { key: 4,  chords: [1,4,5,1], mods: [0,0,0,0], beat: 'afrobeat' },
+  'highlife-g':  { key: 7,  chords: [1,4,5,1], mods: [0,0,0,0], beat: 'highlife' },
+  'cumbia-a':    { key: 9,  chords: [1,4,5,1], mods: [0,0,0,0], beat: 'cumbia' },
+};
+
+function collapseToThumb(frame, thumb) {
+  var r = thumb.getBoundingClientRect();
+  frame.style.top = r.top + 'px';
+  frame.style.left = r.left + 'px';
+  frame.style.width = r.width + 'px';
+  frame.style.height = r.height + 'px';
+}
+
+function showApp(which) {
+  var nFrame = document.getElementById('notationFrame');
+  var sFrame = document.getElementById('sequencerFrame');
+  var tN = document.getElementById('thumbNotation');
+  var tS = document.getElementById('thumbSequencer');
+
+  if (which === 'notation') {
+    nFrame.className = 'app-frame front';
+    nFrame.style.top = '';
+    nFrame.style.left = '';
+    nFrame.style.width = '';
+    nFrame.style.height = '';
+    sFrame.className = 'app-frame behind';
+    collapseToThumb(sFrame, tS);
+    tN.classList.add('active');
+    tS.classList.remove('active');
+  } else {
+    sFrame.className = 'app-frame front';
+    sFrame.style.top = '';
+    sFrame.style.left = '';
+    sFrame.style.width = '';
+    sFrame.style.height = '';
+    nFrame.className = 'app-frame behind';
+    collapseToThumb(nFrame, tN);
+    tS.classList.add('active');
+    tN.classList.remove('active');
+  }
+}
+
+window.addEventListener('resize', function () {
+  var nFrame = document.getElementById('notationFrame');
+  var sFrame = document.getElementById('sequencerFrame');
+  if (nFrame.classList.contains('behind')) collapseToThumb(nFrame, document.getElementById('thumbNotation'));
+  if (sFrame.classList.contains('behind')) collapseToThumb(sFrame, document.getElementById('thumbSequencer'));
+});
+
+function toggleSequencerPlay() {
+  document.getElementById('sequencerFrame').contentWindow.postMessage({
+    target: 'sequencer', type: 'togglePlay'
+  }, '*');
+}
+
+window.addEventListener('message', function (e) {
+  var d = e.data;
+  if (!d || d.target !== 'music') return;
+  if (d.type === 'playState') {
+    var playIcon = document.getElementById('fabPlayIcon');
+    var stopIcon = document.getElementById('fabStopIcon');
+    var fabPlay = document.getElementById('fabPlay');
+    if (d.playing) {
+      playIcon.style.display = 'none';
+      stopIcon.style.display = '';
+      fabPlay.classList.add('active');
+    } else {
+      playIcon.style.display = '';
+      stopIcon.style.display = 'none';
+      fabPlay.classList.remove('active');
+    }
+  }
+});
+
+document.getElementById('songSelect').addEventListener('change', function (e) {
+  var song = songPresets[e.target.value];
+  if (!song) return;
+
+  document.getElementById('notationFrame').contentWindow.postMessage({
+    target: 'notation',
+    type: 'setSong',
+    keyIndex: song.key,
+    chords: song.chords,
+    mods: song.mods
+  }, '*');
+
+  document.getElementById('sequencerFrame').contentWindow.postMessage({
+    target: 'sequencer',
+    type: 'loadPreset',
+    preset: song.beat
+  }, '*');
+});
+</script>
+</body>
+</html>
