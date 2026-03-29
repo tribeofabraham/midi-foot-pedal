@@ -231,6 +231,7 @@ select:focus,input:focus{outline:none;border-color:var(--brass)}
 <script>
 var B=[%BTN_JSON%];
 var sel=0;
+var initMode=%MODE%;
 
 var KEY_MAP={
   'enter':0xB0,'return':0xB0,'esc':0xB1,'escape':0xB1,'backspace':0xB2,
@@ -398,7 +399,9 @@ function applyMode(m){
 
 async function saveAll(){
   readFields();
-  var res=await fetch('/save',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(B)});
+  var modeMap={custom:0,looper:1,pageturner:2,pedalboard:3};
+  var payload={mode:modeMap[currentMode]||0,buttons:B};
+  var res=await fetch('/save',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)});
   document.getElementById('st').textContent=res.ok?'Saved!':'Error';
   if(res.ok)setTimeout(function(){document.getElementById('st').textContent=''},2000);
 }
@@ -421,6 +424,9 @@ async function testPress(btn){
   }
 }
 
+var MODE_NAMES=['custom','looper','pageturner','pedalboard'];
+currentMode=MODE_NAMES[initMode]||'looper';
+document.getElementById('mode-sel').value=currentMode;
 renderPedal();
 selectBtn(0);
 renderTestButtons();
@@ -463,6 +469,7 @@ static String allButtonsJson() {
 static String buildPage() {
     String page = HTML_PAGE;
     page.replace("%BTN_JSON%", allButtonsJson());
+    page.replace("%MODE%", String(cfg.mode));
     return page;
 }
 
@@ -474,11 +481,19 @@ static void handleRoot() {
 static void handleSave() {
     String body = webServer.arg("plain");
 
-    // Minimal JSON array parsing — we know the structure
+    // Parse mode from top-level object
+    int modePos = body.indexOf("\"mode\":");
+    if (modePos >= 0) {
+        cfg.mode = (PedalMode)body.substring(modePos + 7).toInt();
+        if (cfg.mode == MODE_LOOPER) looper_init();
+    }
+
+    // Parse buttons array
     int idx = 0;
-    int pos = 0;
+    int pos = body.indexOf("\"buttons\"");
+    if (pos < 0) pos = 0;
     while (idx < NUM_BUTTONS && pos < (int)body.length()) {
-        int objStart = body.indexOf('{', pos);
+        int objStart = body.indexOf('{', pos + 1);
         if (objStart < 0) break;
         int objEnd = body.indexOf('}', objStart);
         if (objEnd < 0) break;
@@ -644,6 +659,7 @@ static void saveButton(int i) {
 void config_init() {
     prefs.begin("pedal", true);
     cfg.led_brightness = prefs.getUChar("bright", 30);
+    cfg.mode = (PedalMode)prefs.getUChar("mode", MODE_LOOPER);
     for (int i = 0; i < NUM_BUTTONS; i++) loadButton(i);
     prefs.end();
 
@@ -671,6 +687,7 @@ PedalConfig& config_get() {
 void config_save() {
     prefs.begin("pedal", false);
     prefs.putUChar("bright", cfg.led_brightness);
+    prefs.putUChar("mode", cfg.mode);
     for (int i = 0; i < NUM_BUTTONS; i++) saveButton(i);
     prefs.end();
 }

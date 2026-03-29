@@ -1,6 +1,7 @@
 // MIDI Foot Pedal — USB Composite (MIDI + HID Keyboard) + NeoPixel + WiFi
 
 #include <Arduino.h>
+#include "soc/rtc_cntl_reg.h"
 #include "USB.h"
 #include "USBMIDI.h"
 #include "USBHIDKeyboard.h"
@@ -22,7 +23,7 @@ Adafruit_NeoPixel strip(LED_COUNT, LED_PIN, NEO_GRB + NEO_KHZ800);
 static const uint8_t BTN_PINS[NUM_BUTTONS] = { 9, 10, 11, 12 };
 
 // Debounce state
-static const uint32_t DEBOUNCE_MS = 30;
+static const uint32_t DEBOUNCE_MS = 80;
 static uint32_t btn_last_change[NUM_BUTTONS] = {};
 static bool     btn_state[NUM_BUTTONS] = {};      // true = pressed
 static bool     btn_prev_raw[NUM_BUTTONS] = {};
@@ -30,14 +31,29 @@ static bool     btn_prev_raw[NUM_BUTTONS] = {};
 // Toggle state for toggle-mode buttons
 static bool     btn_toggle_on[NUM_BUTTONS] = {};
 
+// Non-looper LED flash state
+static uint8_t  last_pressed_btn = 0;
+static bool     generic_flashing = false;
+static uint32_t generic_flash_start = 0;
+
 // Called from web UI test buttons or physical buttons
 void handle_button_press(uint8_t btn) {
     if (btn >= NUM_BUTTONS) return;
     PedalConfig& cfg = config_get();
     ButtonConfig& b = cfg.buttons[btn];
 
-    // Looper state machine handles LED
-    looper_press(btn);
+    // LED feedback + looper state
+    if (cfg.mode == MODE_LOOPER) {
+        looper_press(btn);
+        // Drum route CC 41: unmute on reset, mute when first loop closes
+        int drum = looper_drum_route_event();
+        if (drum == 1)  MIDI.controlChange(41, 0, 11);    // unmute — drums flow
+        if (drum == -1) MIDI.controlChange(41, 127, 11);  // mute — drums cut
+    } else {
+        last_pressed_btn = btn;
+        generic_flashing = true;
+        generic_flash_start = millis();
+    }
 
     // For toggle buttons, flip state
     if (b.behavior == BEHAVIOR_TOGGLE) {
@@ -52,7 +68,8 @@ void handle_button_press(uint8_t btn) {
                     btn_toggle_on[btn] ? b.midi_cc_on : b.midi_cc_off,
                     b.midi_channel);
             } else {
-                MIDI.controlChange(b.midi_cc, b.midi_cc_on, b.midi_channel);
+                // Momentary: single value of 64 (SooperLooper trigger)
+                MIDI.controlChange(b.midi_cc, 64, b.midi_channel);
             }
             break;
         case ACTION_MIDI_NOTE:
@@ -94,9 +111,7 @@ void handle_button_release(uint8_t btn) {
     if (b.type == ACTION_MIDI_NOTE) {
         MIDI.noteOff(b.midi_note, 0, b.midi_channel);
     }
-    if (b.type == ACTION_MIDI_CC) {
-        MIDI.controlChange(b.midi_cc, b.midi_cc_off, b.midi_channel);
-    }
+    // No CC on release for momentary — SooperLooper only needs a single trigger
 }
 
 // Read and debounce physical buttons
@@ -124,6 +139,23 @@ void read_buttons() {
 }
 
 void setup() {
+    // Check for bootloader combo: hold buttons 1+4 (GPIO 9+12) on power-up
+    pinMode(9, INPUT_PULLUP);
+    pinMode(12, INPUT_PULLUP);
+    delay(50);  // let pull-ups settle
+    if (!digitalRead(9) && !digitalRead(12)) {
+        // Both outer switches held — reboot into USB download mode
+        // Flash NeoPixel yellow to confirm
+        strip.begin();
+        strip.setBrightness(60);
+        strip.setPixelColor(0, strip.Color(255, 180, 0));
+        strip.show();
+        delay(500);
+        // Force reboot into ROM download mode
+        REG_WRITE(RTC_CNTL_OPTION1_REG, RTC_CNTL_FORCE_DOWNLOAD_BOOT);
+        esp_restart();
+    }
+
     USB.productName("Tribe Pedal");
     USB.manufacturerName("Tribe of Abraham");
     USB.PID(0x8030);
@@ -160,13 +192,29 @@ void loop() {
     // Read physical buttons
     read_buttons();
 
-    // Update looper flash timing
-    looper_update();
+    // Update NeoPixel
+    if (config_get().mode == MODE_LOOPER) {
+        looper_update();
+        LooperColor c = looper_led_color();
+        strip.setBrightness(c.r == 255 && c.g == 255 && c.b == 255 ? 80 : 30);
+        strip.setPixelColor(0, strip.Color(c.r, c.g, c.b));
+    } else {
+        PedalConfig& cfg = config_get();
+        ButtonConfig& lb = cfg.buttons[last_pressed_btn];
 
-    // Update NeoPixel from looper state
-    LooperColor c = looper_led_color();
-    strip.setBrightness(c.r == 255 && c.g == 255 && c.b == 255 ? 80 : 30);
-    strip.setPixelColor(0, strip.Color(c.r, c.g, c.b));
+        if (generic_flashing) {
+            // White flash on press
+            strip.setBrightness(80);
+            strip.setPixelColor(0, strip.Color(255, 255, 255));
+            if (millis() - generic_flash_start > 120) {
+                generic_flashing = false;
+            }
+        } else {
+            // Show active color of the selected button
+            strip.setBrightness(40);
+            strip.setPixelColor(0, strip.Color(lb.color_on_r, lb.color_on_g, lb.color_on_b));
+        }
+    }
     strip.show();
 
     if (!(bool)USB) {

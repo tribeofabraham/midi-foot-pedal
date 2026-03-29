@@ -26,3 +26,6 @@ LooperColor looper_led_color();
 
 // Call every loop iteration to handle flash timing
 void looper_update();
+
+// Check if drum route CC should be sent (returns 1=on, -1=off, 0=no change)
+int looper_drum_route_event();

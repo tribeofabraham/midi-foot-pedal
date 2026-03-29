@@ -48,9 +48,17 @@ struct ButtonConfig {
     float   osc_off        = 0.0f;
 };
 
+enum PedalMode : uint8_t {
+    MODE_CUSTOM = 0,
+    MODE_LOOPER,
+    MODE_PAGETURNER,
+    MODE_PEDALBOARD
+};
+
 struct PedalConfig {
     ButtonConfig buttons[NUM_BUTTONS];
     uint8_t led_brightness = 30;
+    PedalMode mode = MODE_LOOPER;
 };
 
 void config_init();
