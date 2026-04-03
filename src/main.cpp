@@ -23,7 +23,7 @@ Adafruit_NeoPixel strip(LED_COUNT, LED_PIN, NEO_GRB + NEO_KHZ800);
 static const uint8_t BTN_PINS[NUM_BUTTONS] = { 9, 10, 11, 12 };
 
 // Debounce state
-static const uint32_t DEBOUNCE_MS = 80;
+static const uint32_t DEBOUNCE_MS = 20;
 static uint32_t btn_last_change[NUM_BUTTONS] = {};
 static bool     btn_state[NUM_BUTTONS] = {};      // true = pressed
 static bool     btn_prev_raw[NUM_BUTTONS] = {};
@@ -45,10 +45,25 @@ void handle_button_press(uint8_t btn) {
     // LED feedback + looper state
     if (cfg.mode == MODE_LOOPER) {
         looper_press(btn);
-        // Drum route CC 41: unmute on reset, mute when first loop closes
+
+        // Drum route CC 41: unmute/mute
         int drum = looper_drum_route_event();
         if (drum == 1)  MIDI.controlChange(41, 0, 11);    // unmute — drums flow
         if (drum == -1) MIDI.controlChange(41, 127, 11);  // mute — drums cut
+
+        // FX chain select on button 2 — CCs 42-45 on ch 11
+        // Active chain gets 127, all others get 0
+        if (btn == 1) {
+            uint8_t active = looper_fx_chain();
+            for (uint8_t i = 0; i < 4; i++) {
+                MIDI.controlChange(42 + i, (i == active) ? 127 : 0, 11);
+            }
+        }
+
+        // Reset clears all toggle states
+        if (btn == 3) {
+            for (int i = 0; i < NUM_BUTTONS; i++) btn_toggle_on[i] = false;
+        }
     } else {
         last_pressed_btn = btn;
         generic_flashing = true;
@@ -230,5 +245,4 @@ void loop() {
         return;
     }
 
-    delay(1);
 }

@@ -29,3 +29,6 @@ void looper_update();
 
 // Check if drum route CC should be sent (returns 1=on, -1=off, 0=no change)
 int looper_drum_route_event();
+
+// Current FX chain (0-3), changed by button 2 long-cycling
+uint8_t looper_fx_chain();

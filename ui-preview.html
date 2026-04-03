@@ -1,24 +1,3 @@
-#include "config.h"
-#include "looper.h"
-#include <WiFi.h>
-#include <DNSServer.h>
-#include <WebServer.h>
-#include <ESPmDNS.h>
-#include <Preferences.h>
-
-// Defined in main.cpp
-extern void handle_button_press(uint8_t btn);
-
-static PedalConfig cfg;
-static DNSServer   dnsServer;
-static WebServer   webServer(80);
-static Preferences prefs;
-
-static const char* AP_SSID = "TribePedal";
-static const char* HOSTNAME = "tribepedal";
-
-// ── HTML (synced from ui-preview.html) ─────────────────────
-static const char HTML_PAGE[] PROGMEM = R"rawliteral(
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -30,8 +9,6 @@ static const char HTML_PAGE[] PROGMEM = R"rawliteral(
 <meta name="apple-mobile-web-app-title" content="Tribe Pedal">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="theme-color" content="#111111">
-<link rel="icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAACXBIWXMAAAsTAAALEwEAmpwYAAAFeklEQVR4nO1Wa0yTVxh+e4e2tNwEK/TCRWih1EKho1Boy1UpgaICCgIqqEO8TAE3jDpk4ma8TVA2Lz+mIiPo5jbnDLuoi8ncry1bsriYTbP9WJZlbgnZAijyLKerIJty2eqfZU/yJt93vvc7z/Od9znvd4j+x/QRQ0SSaeRJichB3oY8JvcnaYT1NhEpJkmbk2ANuWUv1YwSkcirAoISK+5GLesFE0JEUY9I0Vmcyjvbe2woWhMLIgr2Jj9/lrkW6uIOqEsOIyBh4QARGcefkjW3Mmqw/kAqandbsGhDHBOg8qaAwND09TDYnUjOykV01VkEmWqGiPg2oS9voatBO7Kj146sVXakLS/EkuYEJkDnTQERCseziK7qQ/iCdsy2NSF6WR9C0hpGIvRBgy0nM5BXHY3yJj2YkOrtRiYg2ZsCjGF5OxE+vx3E4bDJIVWnIqqiBwr7FvhIfd1jLJZsSUDtriR2bf83hGLmOyKKJCI9EdUEGZfCL8I6RsTCN0SH8Pm7wBP5jY1lV0Sifl8Ku97q2Y5GzzyBbrdMgsTIopW/61c9D8Pa3TA1d8K87QRS27qRse9t2Dv74TjyITg83gQRfw2rS4WNh1Oxf6MPvjwjxbWjEry7X4KeNjGOPueLjeXCQSIyP0qAVJFWcNt57ibsHZdgXFaDwje/gaXtDJio2KWbEFlcBwGXB6VQCIGnFCxEHA7CPWNJ2Qps6rKg0MrH+T1i4FM5XEVx+LzbD0PX5HCm829N1tDCNQuqfrEf/gDGFevwVOvJCV9nk8tw2uHAxTgd3pkbDbNEgmyZH96aG41+bSxeS0+H2W+8HCzYCqyo0OFGrwyV+QLWQ8Kmqr8+tmLzYOH5b2FY2z42UQCPhx67DRe0sfjYE1c88eD+YmwMujMzIOFyx95jy89WYX2ZcMDTzqcFm6HhxZGCvhsICQtGoIyDbJkMl3TaMbLHxQV9PNKkUjd5dYEQo9flaK0TDRGRiWYCro9PmdKSfe+T41L3V+TJZVOSPwgmwGHiY/iaHF1bfEeIKJtmCrmUXBcPSEbvvC+DTsNFmFCIq9MgvxwbgwA+H5ePSPD6C2IoLPmDPJ4of0bkfD7ZuneKR5hrM4z8sXpun6OYUsDm2aHuXIkvB7I5SjjfuAl93Y7hmZTA0NnoM8SMw/btw45m5jqh0TyW/BW1Gj4PGZBFUuMhMENHLaof8DSkSRHxfJ1o4LNTMiwqScCVLgk4nImNRsbjoVOl+hv5QZVygvtZcDhcpO85B2PNaji6PoIyu/SHyX7TgetKhT8y137RLUNNuda9fa6fkKLELkDTsXR3k2ET8zkcbAoNdRMzX9SHzHKPcQVCRLlWQVvVjIQ1bW5y1sxYU7N19KPg7NcITcn56nGHFfPTJcI7rXWiu/s2+OBYiy/62sXoPyTBhjIhnumyIK1INeELU6USmCTisXu+WIqsV6/C9vJ7sO49j9TWU0hpOYqkpg4Y6tsRv3IbVPkVbEsmTlUK4UM/I2aexoYDZjjKI8bJJEEIy2+DKFAzQZQ8Jg8B8S52Xe15N84zTwAR+dA/RObql5JRujl+3JD+MoTltSJyySmIFYY/a87lQ1V0ELMzGzEdw80EpuWtie7DRlmjHs7aGGw9nQm1PnhYYWsejarsdZMqnXs9B5W1Xj8TaitbDEgsdcJRZ3cLKaiLGeEKuGXEFZSHWOrvs2Naeo4VcbZiBCfXMAECbwpQsuWvbU/F+kMWZC7WsH961vhjXm6QqWpYXdKFiMXHETiv/B55GYGuBh22nbHBlKP4lYjmPSInxT+++Dd2bvSPd7Gm41XwbYs197Xm4O+JSD1JnlYWnfOzNDLjO3oCKCAi/2nkhbB2/iQE0H8SfwDB5dfWAE9+FAAAAABJRU5ErkJggg==" type="image/png">
-<link rel="apple-touch-icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAACXBIWXMAAAsTAAALEwEAmpwYAAAFeklEQVR4nO1Wa0yTVxh+e4e2tNwEK/TCRWih1EKho1Boy1UpgaICCgIqqEO8TAE3jDpk4ma8TVA2Lz+mIiPo5jbnDLuoi8ncry1bsriYTbP9WJZlbgnZAijyLKerIJty2eqfZU/yJt93vvc7z/Od9znvd4j+x/QRQ0SSaeRJichB3oY8JvcnaYT1NhEpJkmbk2ANuWUv1YwSkcirAoISK+5GLesFE0JEUY9I0Vmcyjvbe2woWhMLIgr2Jj9/lrkW6uIOqEsOIyBh4QARGcefkjW3Mmqw/kAqandbsGhDHBOg8qaAwND09TDYnUjOykV01VkEmWqGiPg2oS9voatBO7Kj146sVXakLS/EkuYEJkDnTQERCseziK7qQ/iCdsy2NSF6WR9C0hpGIvRBgy0nM5BXHY3yJj2YkOrtRiYg2ZsCjGF5OxE+vx3E4bDJIVWnIqqiBwr7FvhIfd1jLJZsSUDtriR2bf83hGLmOyKKJCI9EdUEGZfCL8I6RsTCN0SH8Pm7wBP5jY1lV0Sifl8Ku97q2Y5GzzyBbrdMgsTIopW/61c9D8Pa3TA1d8K87QRS27qRse9t2Dv74TjyITg83gQRfw2rS4WNh1Oxf6MPvjwjxbWjEry7X4KeNjGOPueLjeXCQSIyP0qAVJFWcNt57ibsHZdgXFaDwje/gaXtDJio2KWbEFlcBwGXB6VQCIGnFCxEHA7CPWNJ2Qps6rKg0MrH+T1i4FM5XEVx+LzbD0PX5HCm829N1tDCNQuqfrEf/gDGFevwVOvJCV9nk8tw2uHAxTgd3pkbDbNEgmyZH96aG41+bSxeS0+H2W+8HCzYCqyo0OFGrwyV+QLWQ8Kmqr8+tmLzYOH5b2FY2z42UQCPhx67DRe0sfjYE1c88eD+YmwMujMzIOFyx95jy89WYX2ZcMDTzqcFm6HhxZGCvhsICQtGoIyDbJkMl3TaMbLHxQV9PNKkUjd5dYEQo9flaK0TDRGRiWYCro9PmdKSfe+T41L3V+TJZVOSPwgmwGHiY/iaHF1bfEeIKJtmCrmUXBcPSEbvvC+DTsNFmFCIq9MgvxwbgwA+H5ePSPD6C2IoLPmDPJ4of0bkfD7ZuneKR5hrM4z8sXpun6OYUsDm2aHuXIkvB7I5SjjfuAl93Y7hmZTA0NnoM8SMw/btw45m5jqh0TyW/BW1Gj4PGZBFUuMhMENHLaof8DSkSRHxfJ1o4LNTMiwqScCVLgk4nImNRsbjoVOl+hv5QZVygvtZcDhcpO85B2PNaji6PoIyu/SHyX7TgetKhT8y137RLUNNuda9fa6fkKLELkDTsXR3k2ET8zkcbAoNdRMzX9SHzHKPcQVCRLlWQVvVjIQ1bW5y1sxYU7N19KPg7NcITcn56nGHFfPTJcI7rXWiu/s2+OBYiy/62sXoPyTBhjIhnumyIK1INeELU6USmCTisXu+WIqsV6/C9vJ7sO49j9TWU0hpOYqkpg4Y6tsRv3IbVPkVbEsmTlUK4UM/I2aexoYDZjjKI8bJJEEIy2+DKFAzQZQ8Jg8B8S52Xe15N84zTwAR+dA/RObql5JRujl+3JD+MoTltSJyySmIFYY/a87lQ1V0ELMzGzEdw80EpuWtie7DRlmjHs7aGGw9nQm1PnhYYWsejarsdZMqnXs9B5W1Xj8TaitbDEgsdcJRZ3cLKaiLGeEKuGXEFZSHWOrvs2Naeo4VcbZiBCfXMAECbwpQsuWvbU/F+kMWZC7WsH961vhjXm6QqWpYXdKFiMXHETiv/B55GYGuBh22nbHBlKP4lYjmPSInxT+++Dd2bvSPd7Gm41XwbYs197Xm4O+JSD1JnlYWnfOzNDLjO3oCKCAi/2nkhbB2/iQE0H8SfwDB5dfWAE9+FAAAAABJRU5ErkJggg==">
 <link rel="manifest" href="/manifest.webmanifest">
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
@@ -150,10 +127,21 @@ select{color:var(--paper);appearance:auto}
 }
 .test-row button:hover{border-color:var(--accent);color:var(--accent-light)}
 .test-row button:focus-visible{outline:2px solid var(--accent-light);outline-offset:2px}
+
+/* Preview banner */
+.preview-banner{
+  background:var(--accent);color:var(--ink);text-align:center;
+  padding:.5rem;font-size:.75rem;font-weight:500;
+  text-transform:uppercase;letter-spacing:.1em;margin-bottom:1rem;
+  border-radius:2px;
+}
 </style>
 </head>
 <body>
 <div class="container" role="main">
+  <div class="preview-banner" role="alert">UI Preview — not connected to pedal</div>
+
+
 
   <div class="toolbar" role="toolbar" aria-label="Button selector and preset">
     <div class="pedal" id="pedal-row" role="tablist"></div>
@@ -238,7 +226,7 @@ select{color:var(--paper);appearance:auto}
     </div>
   </div>
 
-  <button type="button" class="save-btn" onclick="saveAll()">Save All</button>
+  <button type="button" class="save-btn" onclick="alert('Preview mode — connect to pedal WiFi to save')">Save All</button>
   <div class="status" id="st" role="status" aria-live="polite"></div>
 
   <div class="card" style="margin-top:1.2rem">
@@ -250,9 +238,13 @@ select{color:var(--paper);appearance:auto}
 </div>
 
 <script>
-var B=[%BTN_JSON%];
+var B=[
+  {t:0,bh:1,cr:0,cg:0,cb:180,cor:255,cog:0,cob:0,kc:0,km:0,cc:37,mch:11,con:127,cof:0,nt:60,vel:127,pc:0,oa:'/sl/0/hit',oon:1,oof:0},
+  {t:0,bh:1,cr:128,cg:0,cb:180,cor:0,cog:255,cob:0,kc:0,km:0,cc:38,mch:11,con:127,cof:0,nt:60,vel:127,pc:0,oa:'/sl/0/hit',oon:1,oof:0},
+  {t:0,bh:0,cr:0,cg:0,cb:180,cor:255,cog:255,cob:255,kc:0,km:0,cc:39,mch:11,con:127,cof:0,nt:60,vel:127,pc:0,oa:'/sl/0/hit',oon:1,oof:0},
+  {t:0,bh:0,cr:0,cg:0,cb:180,cor:255,cog:255,cob:255,kc:0,km:0,cc:40,mch:11,con:127,cof:0,nt:60,vel:127,pc:0,oa:'/sl/0/hit',oon:1,oof:0}
+];
 var sel=0;
-var initMode=%MODE%;
 
 var KEY_MAP={
   'enter':0xB0,'return':0xB0,'esc':0xB1,'escape':0xB1,'backspace':0xB2,
@@ -411,6 +403,12 @@ var TEST_LABELS={
 };
 var currentMode='looper';
 
+var looperState=0;
+var layerCount=0;
+var FX_COLORS=['#ffffff','#0050ff','#00ff00','#ff8c00'];
+var FX_NAMES=['Clean','Chorus','Overdrive','Distortion'];
+var fxChain=0;
+
 function renderTestButtons(){
   var labels=TEST_LABELS[currentMode]||TEST_LABELS.custom;
   var row=document.getElementById('test-row');
@@ -425,312 +423,52 @@ function renderTestButtons(){
   }
 }
 
-async function testPress(btn){
+function testPress(btn){
   var st=document.getElementById('st');
-  st.textContent='Sending...';
-  var res=await fetch('/press?b='+btn);
-  if(res.ok){
-    var j=await res.json();
-    st.textContent=j.msg||'Sent';
+  if(currentMode==='looper'){
+    switch(btn){
+      case 0:
+        if(looperState===0) looperState=1;
+        else if(looperState===1){looperState=2;layerCount=1;}
+        else if(looperState===2) looperState=3;
+        else if(looperState===3){looperState=2;layerCount++;}
+        else if(looperState===4) looperState=3;
+        break;
+      case 1:
+        fxChain=(fxChain+1)&3;
+        st.textContent=FX_NAMES[fxChain];
+        setTimeout(function(){st.textContent=''},800);
+        return;
+      case 2:
+        if(layerCount>0){layerCount--;if(layerCount===0)looperState=0;}
+        if(looperState===3)looperState=2;
+        break;
+      case 3:
+        looperState=0;layerCount=0;fxChain=0;
+        break;
+    }
+    var names=['Ready','Recording','Playing','Overdubbing','Paused'];
+    st.textContent=names[looperState];
+    setTimeout(function(){st.textContent=''},800);
   } else {
-    st.textContent='Error';
+    st.textContent='Sent';
+    setTimeout(function(){st.textContent=''},600);
   }
-  setTimeout(function(){st.textContent=''},800);
 }
 
 function applyMode(m){
   currentMode=m;
+  looperState=0;layerCount=0;fxChain=0;
   if(MODES[m]){
     B=JSON.parse(JSON.stringify(MODES[m]));
     selectBtn(0);
   }
   renderTestButtons();
-  fetch('/press?b=99');
 }
 
-async function saveAll(){
-  readFields();
-  var modeMap={custom:0,looper:1,pageturner:2,pedalboard:3};
-  var payload={mode:modeMap[currentMode]||0,buttons:B};
-  var res=await fetch('/save',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)});
-  document.getElementById('st').textContent=res.ok?'Saved!':'Error';
-  if(res.ok)setTimeout(function(){document.getElementById('st').textContent=''},2000);
-}
-
-var MODE_NAMES=['custom','looper','pageturner','pedalboard'];
-currentMode=MODE_NAMES[initMode]||'looper';
-document.getElementById('mode-sel').value=currentMode;
 renderPedal();
 selectBtn(0);
 renderTestButtons();
 </script>
 </body>
 </html>
-)rawliteral";
-
-// ── JSON helpers ───────────────────────────────────────────
-static String buttonToJson(const ButtonConfig& b, int idx) {
-    char buf[320];
-    snprintf(buf, sizeof(buf),
-        "{\"t\":%d,\"bh\":%d,"
-        "\"cr\":%d,\"cg\":%d,\"cb\":%d,"
-        "\"cor\":%d,\"cog\":%d,\"cob\":%d,"
-        "\"mch\":%d,\"cc\":%d,\"con\":%d,\"cof\":%d,"
-        "\"nt\":%d,\"vel\":%d,\"pc\":%d,"
-        "\"km\":%d,\"kc\":%d,"
-        "\"oa\":\"%s\",\"oon\":%.1f,\"oof\":%.1f}",
-        b.type, b.behavior,
-        b.color_r, b.color_g, b.color_b,
-        b.color_on_r, b.color_on_g, b.color_on_b,
-        b.midi_channel, b.midi_cc, b.midi_cc_on, b.midi_cc_off,
-        b.midi_note, b.midi_velocity, b.midi_program,
-        b.key_modifiers, b.key_code,
-        b.osc_addr, b.osc_on, b.osc_off
-    );
-    return String(buf);
-}
-
-static String allButtonsJson() {
-    String json = "";
-    for (int i = 0; i < NUM_BUTTONS; i++) {
-        if (i > 0) json += ",";
-        json += buttonToJson(cfg.buttons[i], i);
-    }
-    return json;
-}
-
-static String buildPage() {
-    String page = HTML_PAGE;
-    page.replace("%BTN_JSON%", allButtonsJson());
-    page.replace("%MODE%", String(cfg.mode));
-    return page;
-}
-
-// ── Route handlers ─────────────────────────────────────────
-static void handleRoot() {
-    webServer.send(200, "text/html", buildPage());
-}
-
-static void handleSave() {
-    String body = webServer.arg("plain");
-
-    // Parse mode from top-level object
-    int modePos = body.indexOf("\"mode\":");
-    if (modePos >= 0) {
-        cfg.mode = (PedalMode)body.substring(modePos + 7).toInt();
-        if (cfg.mode == MODE_LOOPER) looper_init();
-    }
-
-    // Parse buttons array
-    int idx = 0;
-    int pos = body.indexOf("\"buttons\"");
-    if (pos < 0) pos = 0;
-    while (idx < NUM_BUTTONS && pos < (int)body.length()) {
-        int objStart = body.indexOf('{', pos + 1);
-        if (objStart < 0) break;
-        int objEnd = body.indexOf('}', objStart);
-        if (objEnd < 0) break;
-        String obj = body.substring(objStart, objEnd + 1);
-
-        ButtonConfig& b = cfg.buttons[idx];
-
-        // Parse each known field
-        auto getInt = [&](const char* key) -> int {
-            String k = String("\"") + key + "\":";
-            int p = obj.indexOf(k);
-            if (p < 0) return 0;
-            return obj.substring(p + k.length()).toInt();
-        };
-        auto getFloat = [&](const char* key) -> float {
-            String k = String("\"") + key + "\":";
-            int p = obj.indexOf(k);
-            if (p < 0) return 0.0f;
-            return obj.substring(p + k.length()).toFloat();
-        };
-        auto getStr = [&](const char* key, char* dst, int maxLen) {
-            String k = String("\"") + key + "\":\"";
-            int p = obj.indexOf(k);
-            if (p < 0) { dst[0] = 0; return; }
-            int start = p + k.length();
-            int end = obj.indexOf('"', start);
-            if (end < 0) { dst[0] = 0; return; }
-            String val = obj.substring(start, end);
-            strncpy(dst, val.c_str(), maxLen - 1);
-            dst[maxLen - 1] = 0;
-        };
-
-        b.type         = (ActionType)getInt("t");
-        b.behavior     = (ButtonBehavior)getInt("bh");
-        b.color_r      = getInt("cr");
-        b.color_g      = getInt("cg");
-        b.color_b      = getInt("cb");
-        b.color_on_r   = getInt("cor");
-        b.color_on_g   = getInt("cog");
-        b.color_on_b   = getInt("cob");
-        b.midi_channel  = getInt("mch");
-        b.midi_cc       = getInt("cc");
-        b.midi_cc_on    = getInt("con");
-        b.midi_cc_off   = getInt("cof");
-        b.midi_note     = getInt("nt");
-        b.midi_velocity = getInt("vel");
-        b.midi_program  = getInt("pc");
-        b.key_modifiers = getInt("km");
-        b.key_code      = getInt("kc");
-        b.osc_on        = getFloat("oon");
-        b.osc_off       = getFloat("oof");
-        getStr("oa", b.osc_addr, sizeof(b.osc_addr));
-
-        idx++;
-        pos = objEnd + 1;
-    }
-
-    config_save();
-    webServer.send(200, "text/plain", "OK");
-}
-
-static void handlePress() {
-    if (webServer.hasArg("b")) {
-        int btn = webServer.arg("b").toInt();
-        if (btn == 99) {
-            // Reset looper state (mode change)
-            looper_init();
-            webServer.send(200, "application/json", "{\"s\":0}");
-            return;
-        }
-        if (btn >= 0 && btn < NUM_BUTTONS) {
-            handle_button_press((uint8_t)btn);
-            String json = "{\"s\":" + String(looper_state()) + "}";
-            webServer.send(200, "application/json", json);
-            return;
-        }
-    }
-    webServer.send(400, "text/plain", "Bad request");
-}
-
-static void handleManifest() {
-    webServer.send(200, "application/manifest+json",
-        "{\"name\":\"Tribe Pedal\",\"short_name\":\"Pedal\","
-        "\"start_url\":\"/\",\"display\":\"standalone\","
-        "\"background_color\":\"#111111\",\"theme_color\":\"#111111\","
-        "\"icons\":[{\"src\":\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAACXBIWXMAAAsTAAALEwEAmpwYAAAFeklEQVR4nO1Wa0yTVxh+e4e2tNwEK/TCRWih1EKho1Boy1UpgaICCgIqqEO8TAE3jDpk4ma8TVA2Lz+mIiPo5jbnDLuoi8ncry1bsriYTbP9WJZlbgnZAijyLKerIJty2eqfZU/yJt93vvc7z/Od9znvd4j+x/QRQ0SSaeRJichB3oY8JvcnaYT1NhEpJkmbk2ANuWUv1YwSkcirAoISK+5GLesFE0JEUY9I0Vmcyjvbe2woWhMLIgr2Jj9/lrkW6uIOqEsOIyBh4QARGcefkjW3Mmqw/kAqandbsGhDHBOg8qaAwND09TDYnUjOykV01VkEmWqGiPg2oS9voatBO7Kj146sVXakLS/EkuYEJkDnTQERCseziK7qQ/iCdsy2NSF6WR9C0hpGIvRBgy0nM5BXHY3yJj2YkOrtRiYg2ZsCjGF5OxE+vx3E4bDJIVWnIqqiBwr7FvhIfd1jLJZsSUDtriR2bf83hGLmOyKKJCI9EdUEGZfCL8I6RsTCN0SH8Pm7wBP5jY1lV0Sifl8Ku97q2Y5GzzyBbrdMgsTIopW/61c9D8Pa3TA1d8K87QRS27qRse9t2Dv74TjyITg83gQRfw2rS4WNh1Oxf6MPvjwjxbWjEry7X4KeNjGOPueLjeXCQSIyP0qAVJFWcNt57ibsHZdgXFaDwje/gaXtDJio2KWbEFlcBwGXB6VQCIGnFCxEHA7CPWNJ2Qps6rKg0MrH+T1i4FM5XEVx+LzbD0PX5HCm829N1tDCNQuqfrEf/gDGFevwVOvJCV9nk8tw2uHAxTgd3pkbDbNEgmyZH96aG41+bSxeS0+H2W+8HCzYCqyo0OFGrwyV+QLWQ8Kmqr8+tmLzYOH5b2FY2z42UQCPhx67DRe0sfjYE1c88eD+YmwMujMzIOFyx95jy89WYX2ZcMDTzqcFm6HhxZGCvhsICQtGoIyDbJkMl3TaMbLHxQV9PNKkUjd5dYEQo9flaK0TDRGRiWYCro9PmdKSfe+T41L3V+TJZVOSPwgmwGHiY/iaHF1bfEeIKJtmCrmUXBcPSEbvvC+DTsNFmFCIq9MgvxwbgwA+H5ePSPD6C2IoLPmDPJ4of0bkfD7ZuneKR5hrM4z8sXpun6OYUsDm2aHuXIkvB7I5SjjfuAl93Y7hmZTA0NnoM8SMw/btw45m5jqh0TyW/BW1Gj4PGZBFUuMhMENHLaof8DSkSRHxfJ1o4LNTMiwqScCVLgk4nImNRsbjoVOl+hv5QZVygvtZcDhcpO85B2PNaji6PoIyu/SHyX7TgetKhT8y137RLUNNuda9fa6fkKLELkDTsXR3k2ET8zkcbAoNdRMzX9SHzHKPcQVCRLlWQVvVjIQ1bW5y1sxYU7N19KPg7NcITcn56nGHFfPTJcI7rXWiu/s2+OBYiy/62sXoPyTBhjIhnumyIK1INeELU6USmCTisXu+WIqsV6/C9vJ7sO49j9TWU0hpOYqkpg4Y6tsRv3IbVPkVbEsmTlUK4UM/I2aexoYDZjjKI8bJJEEIy2+DKFAzQZQ8Jg8B8S52Xe15N84zTwAR+dA/RObql5JRujl+3JD+MoTltSJyySmIFYY/a87lQ1V0ELMzGzEdw80EpuWtie7DRlmjHs7aGGw9nQm1PnhYYWsejarsdZMqnXs9B5W1Xj8TaitbDEgsdcJRZ3cLKaiLGeEKuGXEFZSHWOrvs2Naeo4VcbZiBCfXMAECbwpQsuWvbU/F+kMWZC7WsH961vhjXm6QqWpYXdKFiMXHETiv/B55GYGuBh22nbHBlKP4lYjmPSInxT+++Dd2bvSPd7Gm41XwbYs197Xm4O+JSD1JnlYWnfOzNDLjO3oCKCAi/2nkhbB2/iQE0H8SfwDB5dfWAE9+FAAAAABJRU5ErkJggg==\",\"sizes\":\"32x32\",\"type\":\"image/png\"}]}"
-    );
-}
-
-static void handleNotFound() {
-    webServer.sendHeader("Location", "http://tribepedal.local/", true);
-    webServer.send(302, "text/plain", "");
-}
-
-// ── NVS ────────────────────────────────────────────────────
-// Looper defaults per button (used when NVS is empty)
-struct LooperDefault {
-    uint8_t behavior;
-    uint8_t cr, cg, cb;        // idle color
-    uint8_t cor, cog, cob;     // active color
-    uint8_t cc;
-};
-static const LooperDefault LOOPER_DEFAULTS[NUM_BUTTONS] = {
-    { BEHAVIOR_TOGGLE,    0, 0, 180,   255, 0,   0,    37 },  // Record/Overdub: blue → red
-    { BEHAVIOR_TOGGLE,    128, 0, 180,  0,   255, 0,    38 },  // Pause/Play: purple → green
-    { BEHAVIOR_MOMENTARY, 0, 0, 180,   255, 255, 255,  39 },  // Undo: blue → white flash
-    { BEHAVIOR_MOMENTARY, 0, 0, 180,   255, 255, 255,  40 },  // Reset: blue → white flash
-};
-
-static void loadButton(int i) {
-    char prefix[8];
-    snprintf(prefix, sizeof(prefix), "b%d_", i);
-    ButtonConfig& b = cfg.buttons[i];
-    const LooperDefault& d = LOOPER_DEFAULTS[i];
-
-    auto key = [&](const char* suffix) -> String { return String(prefix) + suffix; };
-
-    b.type         = (ActionType)prefs.getUChar(key("t").c_str(), ACTION_MIDI_CC);
-    b.behavior     = (ButtonBehavior)prefs.getUChar(key("bh").c_str(), d.behavior);
-    b.color_r      = prefs.getUChar(key("cr").c_str(), d.cr);
-    b.color_g      = prefs.getUChar(key("cg").c_str(), d.cg);
-    b.color_b      = prefs.getUChar(key("cb").c_str(), d.cb);
-    b.color_on_r   = prefs.getUChar(key("cor").c_str(), d.cor);
-    b.color_on_g   = prefs.getUChar(key("cog").c_str(), d.cog);
-    b.color_on_b   = prefs.getUChar(key("cob").c_str(), d.cob);
-    b.midi_channel  = prefs.getUChar(key("mch").c_str(), 11);
-    b.midi_cc       = prefs.getUChar(key("cc").c_str(), d.cc);
-    b.midi_cc_on    = prefs.getUChar(key("con").c_str(), 127);
-    b.midi_cc_off   = prefs.getUChar(key("cof").c_str(), 0);
-    b.midi_note     = prefs.getUChar(key("nt").c_str(), 60 + i);
-    b.midi_velocity = prefs.getUChar(key("vel").c_str(), 127);
-    b.midi_program  = prefs.getUChar(key("pc").c_str(), i);
-    b.key_modifiers = prefs.getUChar(key("km").c_str(), 0);
-    b.key_code      = prefs.getUChar(key("kc").c_str(), 0);
-    b.osc_on        = prefs.getFloat(key("oon").c_str(), 1.0f);
-    b.osc_off       = prefs.getFloat(key("oof").c_str(), 0.0f);
-
-    String oa = prefs.getString(key("oa").c_str(), String("/sl/0/hit"));
-    strncpy(b.osc_addr, oa.c_str(), sizeof(b.osc_addr) - 1);
-}
-
-static void saveButton(int i) {
-    char prefix[8];
-    snprintf(prefix, sizeof(prefix), "b%d_", i);
-    const ButtonConfig& b = cfg.buttons[i];
-
-    auto key = [&](const char* suffix) -> String { return String(prefix) + suffix; };
-
-    prefs.putUChar(key("t").c_str(), b.type);
-    prefs.putUChar(key("bh").c_str(), b.behavior);
-    prefs.putUChar(key("cr").c_str(), b.color_r);
-    prefs.putUChar(key("cg").c_str(), b.color_g);
-    prefs.putUChar(key("cb").c_str(), b.color_b);
-    prefs.putUChar(key("cor").c_str(), b.color_on_r);
-    prefs.putUChar(key("cog").c_str(), b.color_on_g);
-    prefs.putUChar(key("cob").c_str(), b.color_on_b);
-    prefs.putUChar(key("mch").c_str(), b.midi_channel);
-    prefs.putUChar(key("cc").c_str(), b.midi_cc);
-    prefs.putUChar(key("con").c_str(), b.midi_cc_on);
-    prefs.putUChar(key("cof").c_str(), b.midi_cc_off);
-    prefs.putUChar(key("nt").c_str(), b.midi_note);
-    prefs.putUChar(key("vel").c_str(), b.midi_velocity);
-    prefs.putUChar(key("pc").c_str(), b.midi_program);
-    prefs.putUChar(key("km").c_str(), b.key_modifiers);
-    prefs.putUChar(key("kc").c_str(), b.key_code);
-    prefs.putFloat(key("oon").c_str(), b.osc_on);
-    prefs.putFloat(key("oof").c_str(), b.osc_off);
-    prefs.putString(key("oa").c_str(), b.osc_addr);
-}
-
-// ── Public API ─────────────────────────────────────────────
-void config_init() {
-    prefs.begin("pedal", true);
-    cfg.led_brightness = prefs.getUChar("bright", 30);
-    cfg.mode = (PedalMode)prefs.getUChar("mode", MODE_LOOPER);
-    for (int i = 0; i < NUM_BUTTONS; i++) loadButton(i);
-    prefs.end();
-
-    WiFi.mode(WIFI_AP);
-    WiFi.softAP(AP_SSID);
-    dnsServer.start(53, "*", WiFi.softAPIP());
-    MDNS.begin(HOSTNAME);
-
-    webServer.on("/", handleRoot);
-    webServer.on("/save", HTTP_POST, handleSave);
-    webServer.on("/press", handlePress);
-    webServer.on("/manifest.webmanifest", handleManifest);
-    webServer.onNotFound(handleNotFound);
-    webServer.begin();
-}
-
-void config_loop() {
-    dnsServer.processNextRequest();
-    webServer.handleClient();
-}
-
-PedalConfig& config_get() {
-    return cfg;
-}
-
-void config_save() {
-    prefs.begin("pedal", false);
-    prefs.putUChar("bright", cfg.led_brightness);
-    prefs.putUChar("mode", cfg.mode);
-    for (int i = 0; i < NUM_BUTTONS; i++) saveButton(i);
-    prefs.end();
-}
