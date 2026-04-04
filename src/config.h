@@ -51,6 +51,7 @@ struct ButtonConfig {
 enum PedalMode : uint8_t {
     MODE_CUSTOM = 0,
     MODE_LOOPER,
+    MODE_ZLOOPER,
     MODE_PAGETURNER,
     MODE_PEDALBOARD
 };

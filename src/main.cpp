@@ -23,7 +23,7 @@ Adafruit_NeoPixel strip(LED_COUNT, LED_PIN, NEO_GRB + NEO_KHZ800);
 static const uint8_t BTN_PINS[NUM_BUTTONS] = { 9, 10, 11, 12 };
 
 // Debounce state
-static const uint32_t DEBOUNCE_MS = 20;
+static const uint32_t DEBOUNCE_MS = 10;
 static uint32_t btn_last_change[NUM_BUTTONS] = {};
 static bool     btn_state[NUM_BUTTONS] = {};      // true = pressed
 static bool     btn_prev_raw[NUM_BUTTONS] = {};
@@ -43,7 +43,7 @@ void handle_button_press(uint8_t btn) {
     ButtonConfig& b = cfg.buttons[btn];
 
     // LED feedback + looper state
-    if (cfg.mode == MODE_LOOPER) {
+    if (cfg.mode == MODE_LOOPER || cfg.mode == MODE_ZLOOPER) {
         looper_press(btn);
 
         // Drum route CC 41: unmute/mute
@@ -63,6 +63,22 @@ void handle_button_press(uint8_t btn) {
         // Reset clears all toggle states
         if (btn == 3) {
             for (int i = 0; i < NUM_BUTTONS; i++) btn_toggle_on[i] = false;
+
+            // Z-Looper: simulate double-press-and-hold on single_pedal CC
+            // to trigger reset/clear in SooperLooper
+            if (cfg.mode == MODE_ZLOOPER) {
+                uint8_t cc = cfg.buttons[0].midi_cc;  // same CC as switch 1
+                uint8_t ch = cfg.buttons[0].midi_channel;
+                // First press/release
+                MIDI.controlChange(cc, 127, ch);
+                delay(50);
+                MIDI.controlChange(cc, 0, ch);
+                delay(50);
+                // Second press and hold >1.5s
+                MIDI.controlChange(cc, 127, ch);
+                delay(1600);
+                MIDI.controlChange(cc, 0, ch);
+            }
         }
     } else {
         last_pressed_btn = btn;
@@ -83,8 +99,8 @@ void handle_button_press(uint8_t btn) {
                     btn_toggle_on[btn] ? b.midi_cc_on : b.midi_cc_off,
                     b.midi_channel);
             } else {
-                // Momentary: single value of 64 (SooperLooper trigger)
-                MIDI.controlChange(b.midi_cc, 64, b.midi_channel);
+                // Momentary: send on value, off sent on button release
+                MIDI.controlChange(b.midi_cc, b.midi_cc_on, b.midi_channel);
             }
             break;
         case ACTION_MIDI_NOTE:
@@ -126,7 +142,9 @@ void handle_button_release(uint8_t btn) {
     if (b.type == ACTION_MIDI_NOTE) {
         MIDI.noteOff(b.midi_note, 0, b.midi_channel);
     }
-    // No CC on release for momentary — SooperLooper only needs a single trigger
+    if (b.type == ACTION_MIDI_CC) {
+        MIDI.controlChange(b.midi_cc, b.midi_cc_off, b.midi_channel);
+    }
 }
 
 // Read and debounce physical buttons
@@ -208,7 +226,7 @@ void loop() {
     read_buttons();
 
     // Update NeoPixel
-    if (config_get().mode == MODE_LOOPER) {
+    if (config_get().mode == MODE_LOOPER || config_get().mode == MODE_ZLOOPER) {
         looper_update();
         LooperColor c = looper_led_color();
         strip.setBrightness(c.r == 255 && c.g == 255 && c.b == 255 ? 80 : 30);

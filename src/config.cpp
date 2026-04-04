@@ -160,6 +160,7 @@ select{color:var(--paper);appearance:auto}
     <select id="mode-sel" onchange="applyMode(this.value)" aria-label="Preset" class="preset-sel">
       <option value="custom">Custom</option>
       <option value="looper" selected>Looper</option>
+      <option value="zlooper">Z-Looper</option>
       <option value="pageturner">Page Turner</option>
       <option value="pedalboard">Pedalboard</option>
     </select>
@@ -389,6 +390,12 @@ var MODES={
     {t:0,bh:0,cr:0,cg:0,cb:180,cor:255,cog:255,cob:255,kc:0,km:0,cc:39,mch:11,con:127,cof:0,nt:60,vel:127,pc:0,oa:'/sl/0/hit',oon:1,oof:0},
     {t:0,bh:0,cr:0,cg:0,cb:180,cor:255,cog:255,cob:255,kc:0,km:0,cc:40,mch:11,con:127,cof:0,nt:60,vel:127,pc:0,oa:'/sl/0/hit',oon:1,oof:0}
   ],
+  zlooper:[
+    {t:0,bh:0,cr:0,cg:0,cb:180,cor:255,cog:0,cob:0,kc:0,km:0,cc:37,mch:1,con:127,cof:0,nt:60,vel:127,pc:0,oa:'',oon:1,oof:0},
+    {t:0,bh:0,cr:128,cg:0,cb:180,cor:0,cog:255,cob:0,kc:0,km:0,cc:38,mch:1,con:127,cof:0,nt:60,vel:127,pc:0,oa:'',oon:1,oof:0},
+    {t:0,bh:0,cr:0,cg:0,cb:180,cor:255,cog:255,cob:255,kc:0,km:0,cc:39,mch:1,con:127,cof:0,nt:60,vel:127,pc:0,oa:'',oon:1,oof:0},
+    {t:0,bh:0,cr:0,cg:0,cb:180,cor:255,cog:255,cob:255,kc:0,km:0,cc:40,mch:1,con:127,cof:0,nt:60,vel:127,pc:0,oa:'',oon:1,oof:0}
+  ],
   pageturner:[
     {t:3,bh:0,cr:30,cg:30,cb:50,cor:200,cog:200,cob:255,kc:0xD8,km:0,cc:1,mch:1,con:127,cof:0,nt:60,vel:127,pc:0,oa:'',oon:1,oof:0},
     {t:3,bh:0,cr:30,cg:30,cb:50,cor:200,cog:200,cob:255,kc:0xD7,km:0,cc:1,mch:1,con:127,cof:0,nt:60,vel:127,pc:0,oa:'',oon:1,oof:0},
@@ -406,6 +413,7 @@ var MODES={
 var TEST_LABELS={
   custom:['1','2','3','4'],
   looper:['Rec','FX/Mute','Undo','Reset'],
+  zlooper:['Rec','FX/Mute','Undo','Reset'],
   pageturner:['Left','Right','Up','Down'],
   pedalboard:['FX 1','FX 2','FX 3','FX 4']
 };
@@ -450,14 +458,14 @@ function applyMode(m){
 
 async function saveAll(){
   readFields();
-  var modeMap={custom:0,looper:1,pageturner:2,pedalboard:3};
+  var modeMap={custom:0,looper:1,zlooper:2,pageturner:3,pedalboard:4};
   var payload={mode:modeMap[currentMode]||0,buttons:B};
   var res=await fetch('/save',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)});
   document.getElementById('st').textContent=res.ok?'Saved!':'Error';
   if(res.ok)setTimeout(function(){document.getElementById('st').textContent=''},2000);
 }
 
-var MODE_NAMES=['custom','looper','pageturner','pedalboard'];
+var MODE_NAMES=['custom','looper','zlooper','pageturner','pedalboard'];
 currentMode=MODE_NAMES[initMode]||'looper';
 document.getElementById('mode-sel').value=currentMode;
 renderPedal();
