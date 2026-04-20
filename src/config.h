@@ -66,3 +66,8 @@ void config_init();
 void config_loop();
 PedalConfig& config_get();
 void config_save();
+
+// Early read of just the pedal name — safe to call from setup() before
+// USB or WiFi are initialized. Used to name the USB MIDI device.
+void config_load_name_early();
+const char* config_get_pedal_name();

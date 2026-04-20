@@ -14,8 +14,7 @@ static DNSServer   dnsServer;
 static WebServer   webServer(80);
 static Preferences prefs;
 
-static const char* AP_SSID = "TribePedal";
-static const char* HOSTNAME = "tribepedal";
+static char pedal_name[33] = "TribePedal";
 
 // ── HTML (synced from ui-preview.html) ─────────────────────
 static const char HTML_PAGE[] PROGMEM = R"rawliteral(
@@ -247,7 +246,11 @@ select{color:var(--paper);appearance:auto}
     <div class="test-row" id="test-row" role="group" aria-labelledby="test-label"></div>
   </div>
 
-  <p class="info">Connect to <strong>TribePedal</strong> WiFi or browse to <strong>tribepedal.local</strong></p>
+  <div class="card" style="margin-top:1.2rem">
+    <p class="section-label" style="margin-top:0">Pedal Name</p>
+    <input type="text" id="pedal-name" value="%PEDAL_NAME%" maxlength="32" style="width:100%;box-sizing:border-box;padding:0.4rem;font-size:1rem;border-radius:6px;border:1px solid #444;background:#222;color:#eee" aria-label="Pedal name (WiFi SSID)">
+    <p class="info" style="margin-top:0.4rem">WiFi network name &amp; <span id="mdns-hint">%PEDAL_NAME_LC%.local</span></p>
+  </div>
 </div>
 
 <script>
@@ -459,10 +462,14 @@ function applyMode(m){
 async function saveAll(){
   readFields();
   var modeMap={custom:0,looper:1,zlooper:2,pageturner:3,pedalboard:4};
-  var payload={mode:modeMap[currentMode]||0,buttons:B};
+  var pname=document.getElementById('pedal-name').value.trim()||'TribePedal';
+  var payload={mode:modeMap[currentMode]||0,name:pname,buttons:B};
   var res=await fetch('/save',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)});
-  document.getElementById('st').textContent=res.ok?'Saved!':'Error';
-  if(res.ok)setTimeout(function(){document.getElementById('st').textContent=''},2000);
+  document.getElementById('st').textContent=res.ok?'Saved! Reboot pedal to apply new name.':'Error';
+  if(res.ok){
+    document.getElementById('mdns-hint').textContent=pname.toLowerCase().replace(/[^a-z0-9]/g,'')+'.local';
+    setTimeout(function(){document.getElementById('st').textContent=''},3000);
+  }
 }
 
 var MODE_NAMES=['custom','looper','zlooper','pageturner','pedalboard'];
@@ -511,6 +518,10 @@ static String buildPage() {
     String page = HTML_PAGE;
     page.replace("%BTN_JSON%", allButtonsJson());
     page.replace("%MODE%", String(cfg.mode));
+    page.replace("%PEDAL_NAME%", String(pedal_name));
+    String lc = String(pedal_name);
+    lc.toLowerCase();
+    page.replace("%PEDAL_NAME_LC%", lc);
     return page;
 }
 
@@ -527,6 +538,18 @@ static void handleSave() {
     if (modePos >= 0) {
         cfg.mode = (PedalMode)body.substring(modePos + 7).toInt();
         if (cfg.mode == MODE_LOOPER) looper_init();
+    }
+
+    // Parse pedal name
+    int namePos = body.indexOf("\"name\":\"");
+    if (namePos >= 0) {
+        int start = namePos + 8;
+        int end = body.indexOf('"', start);
+        if (end > start && end - start < (int)sizeof(pedal_name)) {
+            String n = body.substring(start, end);
+            strncpy(pedal_name, n.c_str(), sizeof(pedal_name) - 1);
+            pedal_name[sizeof(pedal_name) - 1] = 0;
+        }
     }
 
     // Parse buttons array
@@ -625,7 +648,18 @@ static void handleManifest() {
 }
 
 static void handleNotFound() {
-    webServer.sendHeader("Location", "http://tribepedal.local/", true);
+    // Derive lowercase alphanumeric host from current pedal name
+    char host[33];
+    int hi = 0;
+    for (int i = 0; pedal_name[i] && hi < 31; i++) {
+        char c = pedal_name[i];
+        if (c >= 'A' && c <= 'Z') c += 32;
+        if ((c >= 'a' && c <= 'z') || (c >= '0' && c <= '9')) host[hi++] = c;
+    }
+    host[hi] = 0;
+    if (hi == 0) strcpy(host, "tribepedal");
+    String loc = String("http://") + host + ".local/";
+    webServer.sendHeader("Location", loc, true);
     webServer.send(302, "text/plain", "");
 }
 
@@ -706,17 +740,44 @@ static void saveButton(int i) {
 }
 
 // ── Public API ─────────────────────────────────────────────
+void config_load_name_early() {
+    Preferences p;
+    p.begin("pedal", true);
+    String savedName = p.getString("name", "TribePedal");
+    p.end();
+    strncpy(pedal_name, savedName.c_str(), sizeof(pedal_name) - 1);
+    pedal_name[sizeof(pedal_name) - 1] = 0;
+}
+
+const char* config_get_pedal_name() {
+    return pedal_name;
+}
+
 void config_init() {
     prefs.begin("pedal", true);
     cfg.led_brightness = prefs.getUChar("bright", 30);
     cfg.mode = (PedalMode)prefs.getUChar("mode", MODE_LOOPER);
+    String savedName = prefs.getString("name", "TribePedal");
+    strncpy(pedal_name, savedName.c_str(), sizeof(pedal_name) - 1);
+    pedal_name[sizeof(pedal_name) - 1] = 0;
     for (int i = 0; i < NUM_BUTTONS; i++) loadButton(i);
     prefs.end();
 
+    // Derive mDNS hostname: lowercase, alphanumeric only
+    char hostname[33];
+    int hi = 0;
+    for (int i = 0; pedal_name[i] && hi < 31; i++) {
+        char c = pedal_name[i];
+        if (c >= 'A' && c <= 'Z') c += 32;
+        if ((c >= 'a' && c <= 'z') || (c >= '0' && c <= '9')) hostname[hi++] = c;
+    }
+    hostname[hi] = 0;
+    if (hi == 0) strcpy(hostname, "tribepedal");
+
     WiFi.mode(WIFI_AP);
-    WiFi.softAP(AP_SSID);
+    WiFi.softAP(pedal_name);
     dnsServer.start(53, "*", WiFi.softAPIP());
-    MDNS.begin(HOSTNAME);
+    MDNS.begin(hostname);
 
     webServer.on("/", handleRoot);
     webServer.on("/save", HTTP_POST, handleSave);
@@ -739,6 +800,7 @@ void config_save() {
     prefs.begin("pedal", false);
     prefs.putUChar("bright", cfg.led_brightness);
     prefs.putUChar("mode", cfg.mode);
+    prefs.putString("name", pedal_name);
     for (int i = 0; i < NUM_BUTTONS; i++) saveButton(i);
     prefs.end();
 }

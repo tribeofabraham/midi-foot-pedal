@@ -189,7 +189,9 @@ void setup() {
         esp_restart();
     }
 
-    USB.productName("Tribe Pedal");
+    // Load the pedal name from NVS early so USB descriptor reflects it
+    config_load_name_early();
+    USB.productName(config_get_pedal_name());
     USB.manufacturerName("Tribe of Abraham");
     USB.PID(0x8030);
     Keyboard.begin();
